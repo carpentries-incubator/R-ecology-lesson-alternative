@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.0",
+    "Version": "4.3.1",
     "Repositories": [
       {
         "Name": "carpentries",
@@ -78,24 +78,6 @@
         "R"
       ],
       "Hash": "45f0398006e83a5b10b72a90663d8d8c"
-    },
-    "RSQLite": {
-      "Package": "RSQLite",
-      "Version": "2.3.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "DBI",
-        "R",
-        "bit64",
-        "blob",
-        "cpp11",
-        "memoise",
-        "methods",
-        "pkgconfig",
-        "plogr"
-      ],
-      "Hash": "207c90cd5438a1f596da2cd54c606fee"
     },
     "Rcpp": {
       "Package": "Rcpp",
@@ -887,12 +869,6 @@
       "Version": "0.12",
       "Source": "Repository",
       "Repository": "RSPM",
-      "RemoteType": "standard",
-      "RemotePkgRef": "mime",
-      "RemoteRef": "mime",
-      "RemoteRepos": "https://cran.rstudio.com",
-      "RemotePkgPlatform": "source",
-      "RemoteSha": "0.12",
       "Requirements": [
         "tools"
       ],
@@ -945,27 +921,11 @@
       "Package": "openssl",
       "Version": "2.0.6",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://carpentries.r-universe.dev",
       "Requirements": [
         "askpass"
       ],
       "Hash": "0f7cd2962e3044bb940cca4f4b5cecbe"
-    },
-    "patchwork": {
-      "Package": "patchwork",
-      "Version": "1.1.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "ggplot2",
-        "grDevices",
-        "graphics",
-        "grid",
-        "gtable",
-        "stats",
-        "utils"
-      ],
-      "Hash": "63b611e9d909a9ed057639d9c3b77152"
     },
     "pillar": {
       "Package": "pillar",
@@ -993,13 +953,6 @@
         "utils"
       ],
       "Hash": "01f28d4278f15c76cddbea05899c5d6f"
-    },
-    "plogr": {
-      "Package": "plogr",
-      "Version": "0.2.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "09eb987710984fc2905c7129c7d85e65"
     },
     "prettyunits": {
       "Package": "prettyunits",
@@ -1080,6 +1033,16 @@
         "R"
       ],
       "Hash": "5e3c5dc0b071b21fa128676560dbe94d"
+    },
+    "ratdat": {
+      "Package": "ratdat",
+      "Version": "1.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "861918730cd53fbde00565f26b94e1c2"
     },
     "readr": {
       "Package": "readr",
