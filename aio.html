@@ -288,7 +288,7 @@
         
 <section id="aio-introduction-r-rstudio"><p>Content from <a href="introduction-r-rstudio.html">Introduction to R and RStudio</a></p>
 <hr>
-<p> Last updated on 2023-11-21 | 
+<p> Last updated on 2023-11-28 | 
         
         <a href="https://github.com/carpentries-incubator/R-ecology-lesson-alternative/edit/main/episodes/introduction-r-rstudio.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -741,7 +741,7 @@ R</li>
 </div>
 </section></section><section id="aio-visualizing-ggplot"><p>Content from <a href="visualizing-ggplot.html">Data visualization with ggplot2</a></p>
 <hr>
-<p> Last updated on 2023-11-21 | 
+<p> Last updated on 2023-11-28 | 
         
         <a href="https://github.com/carpentries-incubator/R-ecology-lesson-alternative/edit/main/episodes/visualizing-ggplot.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -873,20 +873,20 @@ the data.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>'data.frame':	16878 obs. of  13 variables:
- $ record_id      : int  1 2 3 4 5 6 7 8 9 10 ...
- $ month          : int  7 7 7 7 7 7 7 7 7 7 ...
- $ day            : int  16 16 16 16 16 16 16 16 16 16 ...
- $ year           : int  1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
- $ plot_id        : int  2 3 2 7 3 1 2 1 1 6 ...
- $ species_id     : chr  "NL" "NL" "DM" "DM" ...
- $ sex            : chr  "M" "M" "F" "M" ...
- $ hindfoot_length: int  32 33 37 36 35 14 NA 37 34 20 ...
- $ weight         : int  NA NA NA NA NA NA NA NA NA NA ...
- $ genus          : chr  "Neotoma" "Neotoma" "Dipodomys" "Dipodomys" ...
- $ species        : chr  "albigula" "albigula" "merriami" "merriami" ...
- $ taxa           : chr  "Rodent" "Rodent" "Rodent" "Rodent" ...
- $ plot_type      : chr  "Control" "Long-term Krat Exclosure" "Control" "Rodent Exclosure" ...</code></pre>
+<pre class="output" tabindex="0"><code>tibble [16,878 × 13] (S3: tbl_df/tbl/data.frame)
+ $ record_id      : int [1:16878] 1 2 3 4 5 6 7 8 9 10 ...
+ $ month          : int [1:16878] 7 7 7 7 7 7 7 7 7 7 ...
+ $ day            : int [1:16878] 16 16 16 16 16 16 16 16 16 16 ...
+ $ year           : int [1:16878] 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
+ $ plot_id        : int [1:16878] 2 3 2 7 3 1 2 1 1 6 ...
+ $ species_id     : chr [1:16878] "NL" "NL" "DM" "DM" ...
+ $ sex            : chr [1:16878] "M" "M" "F" "M" ...
+ $ hindfoot_length: int [1:16878] 32 33 37 36 35 14 NA 37 34 20 ...
+ $ weight         : int [1:16878] NA NA NA NA NA NA NA NA NA NA ...
+ $ genus          : chr [1:16878] "Neotoma" "Neotoma" "Dipodomys" "Dipodomys" ...
+ $ species        : chr [1:16878] "albigula" "albigula" "merriami" "merriami" ...
+ $ taxa           : chr [1:16878] "Rodent" "Rodent" "Rodent" "Rodent" ...
+ $ plot_type      : chr [1:16878] "Control" "Long-term Krat Exclosure" "Control" "Rodent Exclosure" ...</code></pre>
 </div>
 <p><code>str()</code> will tell us how many observations/rows (obs) and
 variables/columns we have, as well as some information about each of the
@@ -1886,7 +1886,7 @@ appearance, and the <code>theme()</code> function to fine-tune</li>
 </div>
 </section></section><section id="aio-how-r-thinks-about-data"><p>Content from <a href="how-r-thinks-about-data.html">Exploring and understanding data</a></p>
 <hr>
-<p> Last updated on 2023-11-21 | 
+<p> Last updated on 2023-11-28 | 
         
         <a href="https://github.com/carpentries-incubator/R-ecology-lesson-alternative/edit/main/episodes/how-r-thinks-about-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1954,7 +1954,7 @@ the <code>class()</code> function:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] "data.frame"</code></pre>
+<pre class="output" tabindex="0"><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
 </div>
 <p>We can view the first few rows with the <code>head()</code> function,
 and the last few rows with the <code>tail()</code> function:</p>
@@ -1967,20 +1967,16 @@ and the last few rows with the <code>tail()</code> function:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  record_id month day year plot_id species_id sex hindfoot_length weight
-1         1     7  16 1977       2         NL   M              32     NA
-2         2     7  16 1977       3         NL   M              33     NA
-3         3     7  16 1977       2         DM   F              37     NA
-4         4     7  16 1977       7         DM   M              36     NA
-5         5     7  16 1977       3         DM   M              35     NA
-6         6     7  16 1977       1         PF   M              14     NA
-        genus  species   taxa                plot_type
-1     Neotoma albigula Rodent                  Control
-2     Neotoma albigula Rodent Long-term Krat Exclosure
-3   Dipodomys merriami Rodent                  Control
-4   Dipodomys merriami Rodent         Rodent Exclosure
-5   Dipodomys merriami Rodent Long-term Krat Exclosure
-6 Perognathus   flavus Rodent        Spectab exclosure</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 6 × 13
+  record_id month   day  year plot_id species_id sex   hindfoot_length weight
+      &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;
+1         1     7    16  1977       2 NL         M                  32     NA
+2         2     7    16  1977       3 NL         M                  33     NA
+3         3     7    16  1977       2 DM         F                  37     NA
+4         4     7    16  1977       7 DM         M                  36     NA
+5         5     7    16  1977       3 DM         M                  35     NA
+6         6     7    16  1977       1 PF         M                  14     NA
+# ℹ 4 more variables: genus &lt;chr&gt;, species &lt;chr&gt;, taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1991,20 +1987,16 @@ and the last few rows with the <code>tail()</code> function:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>      record_id month day year plot_id species_id sex hindfoot_length weight
-16873     16873    12   5 1989       8         DO   M              37     51
-16874     16874    12   5 1989      16         RM   F              18     15
-16875     16875    12   5 1989       5         RM   M              17      9
-16876     16876    12   5 1989       4         DM   M              37     31
-16877     16877    12   5 1989      11         DM   M              37     50
-16878     16878    12   5 1989       8         DM   F              37     42
-                genus   species   taxa        plot_type
-16873       Dipodomys     ordii Rodent          Control
-16874 Reithrodontomys megalotis Rodent Rodent Exclosure
-16875 Reithrodontomys megalotis Rodent Rodent Exclosure
-16876       Dipodomys  merriami Rodent          Control
-16877       Dipodomys  merriami Rodent          Control
-16878       Dipodomys  merriami Rodent          Control</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 6 × 13
+  record_id month   day  year plot_id species_id sex   hindfoot_length weight
+      &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;
+1     16873    12     5  1989       8 DO         M                  37     51
+2     16874    12     5  1989      16 RM         F                  18     15
+3     16875    12     5  1989       5 RM         M                  17      9
+4     16876    12     5  1989       4 DM         M                  37     31
+5     16877    12     5  1989      11 DM         M                  37     50
+6     16878    12     5  1989       8 DM         F                  37     42
+# ℹ 4 more variables: genus &lt;chr&gt;, species &lt;chr&gt;, taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
 </div>
 <p>We used these functions with just one argument, the object
 <code>complete_old</code>, and we didn’t give the argument a name, like
@@ -2085,23 +2077,20 @@ number:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  record_id month day year plot_id species_id sex hindfoot_length weight
-1         1     7  16 1977       2         NL   M              32     NA
-2         2     7  16 1977       3         NL   M              33     NA
-3         3     7  16 1977       2         DM   F              37     NA
-4         4     7  16 1977       7         DM   M              36     NA
-5         5     7  16 1977       3         DM   M              35     NA
-6         6     7  16 1977       1         PF   M              14     NA
-7         7     7  16 1977       2         PE   F              NA     NA
-        genus  species   taxa                plot_type
-1     Neotoma albigula Rodent                  Control
-2     Neotoma albigula Rodent Long-term Krat Exclosure
-3   Dipodomys merriami Rodent                  Control
-4   Dipodomys merriami Rodent         Rodent Exclosure
-5   Dipodomys merriami Rodent Long-term Krat Exclosure
-6 Perognathus   flavus Rodent        Spectab exclosure
-7  Peromyscus eremicus Rodent                  Control
- [ reached 'max' / getOption("max.print") -- omitted 3 rows ]</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 10 × 13
+   record_id month   day  year plot_id species_id sex   hindfoot_length weight
+       &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;
+ 1         1     7    16  1977       2 NL         M                  32     NA
+ 2         2     7    16  1977       3 NL         M                  33     NA
+ 3         3     7    16  1977       2 DM         F                  37     NA
+ 4         4     7    16  1977       7 DM         M                  36     NA
+ 5         5     7    16  1977       3 DM         M                  35     NA
+ 6         6     7    16  1977       1 PF         M                  14     NA
+ 7         7     7    16  1977       2 PE         F                  NA     NA
+ 8         8     7    16  1977       1 DM         M                  37     NA
+ 9         9     7    16  1977       1 DM         F                  34     NA
+10        10     7    16  1977       6 PF         F                  20     NA
+# ℹ 4 more variables: genus &lt;chr&gt;, species &lt;chr&gt;, taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
 </div>
 <p>If we order them correctly, we don’t have to name either:</p>
 <div class="codewrapper sourceCode" id="cb11">
@@ -2113,23 +2102,20 @@ number:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  record_id month day year plot_id species_id sex hindfoot_length weight
-1         1     7  16 1977       2         NL   M              32     NA
-2         2     7  16 1977       3         NL   M              33     NA
-3         3     7  16 1977       2         DM   F              37     NA
-4         4     7  16 1977       7         DM   M              36     NA
-5         5     7  16 1977       3         DM   M              35     NA
-6         6     7  16 1977       1         PF   M              14     NA
-7         7     7  16 1977       2         PE   F              NA     NA
-        genus  species   taxa                plot_type
-1     Neotoma albigula Rodent                  Control
-2     Neotoma albigula Rodent Long-term Krat Exclosure
-3   Dipodomys merriami Rodent                  Control
-4   Dipodomys merriami Rodent         Rodent Exclosure
-5   Dipodomys merriami Rodent Long-term Krat Exclosure
-6 Perognathus   flavus Rodent        Spectab exclosure
-7  Peromyscus eremicus Rodent                  Control
- [ reached 'max' / getOption("max.print") -- omitted 3 rows ]</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 10 × 13
+   record_id month   day  year plot_id species_id sex   hindfoot_length weight
+       &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;
+ 1         1     7    16  1977       2 NL         M                  32     NA
+ 2         2     7    16  1977       3 NL         M                  33     NA
+ 3         3     7    16  1977       2 DM         F                  37     NA
+ 4         4     7    16  1977       7 DM         M                  36     NA
+ 5         5     7    16  1977       3 DM         M                  35     NA
+ 6         6     7    16  1977       1 PF         M                  14     NA
+ 7         7     7    16  1977       2 PE         F                  NA     NA
+ 8         8     7    16  1977       1 DM         M                  37     NA
+ 9         9     7    16  1977       1 DM         F                  34     NA
+10        10     7    16  1977       6 PF         F                  20     NA
+# ℹ 4 more variables: genus &lt;chr&gt;, species &lt;chr&gt;, taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
 </div>
 <p>Additionally, if we name them, we can put them in any order we
 want:</p>
@@ -2142,23 +2128,20 @@ want:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  record_id month day year plot_id species_id sex hindfoot_length weight
-1         1     7  16 1977       2         NL   M              32     NA
-2         2     7  16 1977       3         NL   M              33     NA
-3         3     7  16 1977       2         DM   F              37     NA
-4         4     7  16 1977       7         DM   M              36     NA
-5         5     7  16 1977       3         DM   M              35     NA
-6         6     7  16 1977       1         PF   M              14     NA
-7         7     7  16 1977       2         PE   F              NA     NA
-        genus  species   taxa                plot_type
-1     Neotoma albigula Rodent                  Control
-2     Neotoma albigula Rodent Long-term Krat Exclosure
-3   Dipodomys merriami Rodent                  Control
-4   Dipodomys merriami Rodent         Rodent Exclosure
-5   Dipodomys merriami Rodent Long-term Krat Exclosure
-6 Perognathus   flavus Rodent        Spectab exclosure
-7  Peromyscus eremicus Rodent                  Control
- [ reached 'max' / getOption("max.print") -- omitted 3 rows ]</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 10 × 13
+   record_id month   day  year plot_id species_id sex   hindfoot_length weight
+       &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;
+ 1         1     7    16  1977       2 NL         M                  32     NA
+ 2         2     7    16  1977       3 NL         M                  33     NA
+ 3         3     7    16  1977       2 DM         F                  37     NA
+ 4         4     7    16  1977       7 DM         M                  36     NA
+ 5         5     7    16  1977       3 DM         M                  35     NA
+ 6         6     7    16  1977       1 PF         M                  14     NA
+ 7         7     7    16  1977       2 PE         F                  NA     NA
+ 8         8     7    16  1977       1 DM         M                  37     NA
+ 9         9     7    16  1977       1 DM         F                  34     NA
+10        10     7    16  1977       6 PF         F                  20     NA
+# ℹ 4 more variables: genus &lt;chr&gt;, species &lt;chr&gt;, taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
 </div>
 <p>Generally, it’s good practice to start with the required arguments,
 like the data.frame whose rows you want to see, and then to name the
@@ -2212,20 +2195,20 @@ at the structure of an object:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>'data.frame':	16878 obs. of  13 variables:
- $ record_id      : int  1 2 3 4 5 6 7 8 9 10 ...
- $ month          : int  7 7 7 7 7 7 7 7 7 7 ...
- $ day            : int  16 16 16 16 16 16 16 16 16 16 ...
- $ year           : int  1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
- $ plot_id        : int  2 3 2 7 3 1 2 1 1 6 ...
- $ species_id     : chr  "NL" "NL" "DM" "DM" ...
- $ sex            : chr  "M" "M" "F" "M" ...
- $ hindfoot_length: int  32 33 37 36 35 14 NA 37 34 20 ...
- $ weight         : int  NA NA NA NA NA NA NA NA NA NA ...
- $ genus          : chr  "Neotoma" "Neotoma" "Dipodomys" "Dipodomys" ...
- $ species        : chr  "albigula" "albigula" "merriami" "merriami" ...
- $ taxa           : chr  "Rodent" "Rodent" "Rodent" "Rodent" ...
- $ plot_type      : chr  "Control" "Long-term Krat Exclosure" "Control" "Rodent Exclosure" ...</code></pre>
+<pre class="output" tabindex="0"><code>tibble [16,878 × 13] (S3: tbl_df/tbl/data.frame)
+ $ record_id      : int [1:16878] 1 2 3 4 5 6 7 8 9 10 ...
+ $ month          : int [1:16878] 7 7 7 7 7 7 7 7 7 7 ...
+ $ day            : int [1:16878] 16 16 16 16 16 16 16 16 16 16 ...
+ $ year           : int [1:16878] 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
+ $ plot_id        : int [1:16878] 2 3 2 7 3 1 2 1 1 6 ...
+ $ species_id     : chr [1:16878] "NL" "NL" "DM" "DM" ...
+ $ sex            : chr [1:16878] "M" "M" "F" "M" ...
+ $ hindfoot_length: int [1:16878] 32 33 37 36 35 14 NA 37 34 20 ...
+ $ weight         : int [1:16878] NA NA NA NA NA NA NA NA NA NA ...
+ $ genus          : chr [1:16878] "Neotoma" "Neotoma" "Dipodomys" "Dipodomys" ...
+ $ species        : chr [1:16878] "albigula" "albigula" "merriami" "merriami" ...
+ $ taxa           : chr [1:16878] "Rodent" "Rodent" "Rodent" "Rodent" ...
+ $ plot_type      : chr [1:16878] "Control" "Long-term Krat Exclosure" "Control" "Rodent Exclosure" ...</code></pre>
 </div>
 <p>We get quite a bit of useful information here. First, we are told
 that we have a data.frame of 16878 observations, or rows, and 13
@@ -2404,7 +2387,7 @@ running any code at first, then run the code and use
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2485,7 +2468,7 @@ the same type, a process called <strong>coercion</strong>.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2545,7 +2528,7 @@ the hierarchy of what types get converted to other types?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>logical → integer → numeric → character</p>
 <p>Logical vectors can only take on two values: <code>TRUE</code> or
@@ -2780,7 +2763,7 @@ any type of vector.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb68">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2846,7 +2829,7 @@ lengths at every 5% level (0%, 5%, 10%, 15%, etc.)</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb74">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3084,7 +3067,7 @@ code?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb94">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3220,7 +3203,7 @@ vectors</li>
 </div>
 </section></section><section id="aio-working-with-data"><p>Content from <a href="working-with-data.html">Working with data</a></p>
 <hr>
-<p> Last updated on 2023-11-21 | 
+<p> Last updated on 2023-11-28 | 
         
         <a href="https://github.com/carpentries-incubator/R-ecology-lesson-alternative/edit/main/episodes/working-with-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3707,7 +3690,7 @@ years from 1980 to 1985.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3743,7 +3726,7 @@ following columns, in order: <code>year</code>, <code>month</code>,
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3907,7 +3890,7 @@ with data from the year 1988. Use a pipe between the function calls.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4213,7 +4196,7 @@ column and plots weight across date.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4649,7 +4632,7 @@ sex caught on each day in the <code>surveys</code> data.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb76">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4705,7 +4688,7 @@ corresponds to which sex.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb79">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5100,7 +5083,7 @@ thoughtfully</li>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.14.1" class="external-link">sandpaper (0.14.1)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.7.2" class="external-link">pegboard (0.7.2)</a>,
+        <a href="https://github.com/carpentries/pegboard/tree/0.7.3" class="external-link">pegboard (0.7.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.3.3" class="external-link">varnish (0.3.3)</a>.</p>
 			</div>
 		</footer>
@@ -5123,8 +5106,8 @@ thoughtfully</li>
   "url": "https://carpentries-incubator.github.io/R-ecology-lesson-alternative/aio.html",
   "identifier": "https://carpentries-incubator.github.io/R-ecology-lesson-alternative/aio.html",
   "dateCreated": "2015-04-02",
-  "dateModified": "2023-11-21",
-  "datePublished": "2023-11-21"
+  "dateModified": "2023-11-28",
+  "datePublished": "2023-11-28"
 }
 
   </script><script>
