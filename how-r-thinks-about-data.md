@@ -43,7 +43,7 @@ class(complete_old)
 ```
 
 ```{.output}
-[1] "data.frame"
+[1] "tbl_df"     "tbl"        "data.frame"
 ```
 
 We can view the first few rows with the `head()` function, and the last few rows with the `tail()` function:
@@ -54,20 +54,16 @@ head(complete_old)
 ```
 
 ```{.output}
-  record_id month day year plot_id species_id sex hindfoot_length weight
-1         1     7  16 1977       2         NL   M              32     NA
-2         2     7  16 1977       3         NL   M              33     NA
-3         3     7  16 1977       2         DM   F              37     NA
-4         4     7  16 1977       7         DM   M              36     NA
-5         5     7  16 1977       3         DM   M              35     NA
-6         6     7  16 1977       1         PF   M              14     NA
-        genus  species   taxa                plot_type
-1     Neotoma albigula Rodent                  Control
-2     Neotoma albigula Rodent Long-term Krat Exclosure
-3   Dipodomys merriami Rodent                  Control
-4   Dipodomys merriami Rodent         Rodent Exclosure
-5   Dipodomys merriami Rodent Long-term Krat Exclosure
-6 Perognathus   flavus Rodent        Spectab exclosure
+# A tibble: 6 × 13
+  record_id month   day  year plot_id species_id sex   hindfoot_length weight
+      <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
+1         1     7    16  1977       2 NL         M                  32     NA
+2         2     7    16  1977       3 NL         M                  33     NA
+3         3     7    16  1977       2 DM         F                  37     NA
+4         4     7    16  1977       7 DM         M                  36     NA
+5         5     7    16  1977       3 DM         M                  35     NA
+6         6     7    16  1977       1 PF         M                  14     NA
+# ℹ 4 more variables: genus <chr>, species <chr>, taxa <chr>, plot_type <chr>
 ```
 
 ```r
@@ -75,20 +71,16 @@ tail(complete_old)
 ```
 
 ```{.output}
-      record_id month day year plot_id species_id sex hindfoot_length weight
-16873     16873    12   5 1989       8         DO   M              37     51
-16874     16874    12   5 1989      16         RM   F              18     15
-16875     16875    12   5 1989       5         RM   M              17      9
-16876     16876    12   5 1989       4         DM   M              37     31
-16877     16877    12   5 1989      11         DM   M              37     50
-16878     16878    12   5 1989       8         DM   F              37     42
-                genus   species   taxa        plot_type
-16873       Dipodomys     ordii Rodent          Control
-16874 Reithrodontomys megalotis Rodent Rodent Exclosure
-16875 Reithrodontomys megalotis Rodent Rodent Exclosure
-16876       Dipodomys  merriami Rodent          Control
-16877       Dipodomys  merriami Rodent          Control
-16878       Dipodomys  merriami Rodent          Control
+# A tibble: 6 × 13
+  record_id month   day  year plot_id species_id sex   hindfoot_length weight
+      <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
+1     16873    12     5  1989       8 DO         M                  37     51
+2     16874    12     5  1989      16 RM         F                  18     15
+3     16875    12     5  1989       5 RM         M                  17      9
+4     16876    12     5  1989       4 DM         M                  37     31
+5     16877    12     5  1989      11 DM         M                  37     50
+6     16878    12     5  1989       8 DM         F                  37     42
+# ℹ 4 more variables: genus <chr>, species <chr>, taxa <chr>, plot_type <chr>
 ```
 
 We used these functions with just one argument, the object `complete_old`, and we didn't give the argument a name, like we often did with `ggplot2`. In R, a function's arguments come in a particular order, and if you put them in the correct order, you don't need to name them. In this case, the name of the argument is `x`, so we can name it if we want, but since we know it's the first argument, we don't need to.
@@ -120,23 +112,20 @@ head(complete_old, n = 10)
 ```
 
 ```{.output}
-  record_id month day year plot_id species_id sex hindfoot_length weight
-1         1     7  16 1977       2         NL   M              32     NA
-2         2     7  16 1977       3         NL   M              33     NA
-3         3     7  16 1977       2         DM   F              37     NA
-4         4     7  16 1977       7         DM   M              36     NA
-5         5     7  16 1977       3         DM   M              35     NA
-6         6     7  16 1977       1         PF   M              14     NA
-7         7     7  16 1977       2         PE   F              NA     NA
-        genus  species   taxa                plot_type
-1     Neotoma albigula Rodent                  Control
-2     Neotoma albigula Rodent Long-term Krat Exclosure
-3   Dipodomys merriami Rodent                  Control
-4   Dipodomys merriami Rodent         Rodent Exclosure
-5   Dipodomys merriami Rodent Long-term Krat Exclosure
-6 Perognathus   flavus Rodent        Spectab exclosure
-7  Peromyscus eremicus Rodent                  Control
- [ reached 'max' / getOption("max.print") -- omitted 3 rows ]
+# A tibble: 10 × 13
+   record_id month   day  year plot_id species_id sex   hindfoot_length weight
+       <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
+ 1         1     7    16  1977       2 NL         M                  32     NA
+ 2         2     7    16  1977       3 NL         M                  33     NA
+ 3         3     7    16  1977       2 DM         F                  37     NA
+ 4         4     7    16  1977       7 DM         M                  36     NA
+ 5         5     7    16  1977       3 DM         M                  35     NA
+ 6         6     7    16  1977       1 PF         M                  14     NA
+ 7         7     7    16  1977       2 PE         F                  NA     NA
+ 8         8     7    16  1977       1 DM         M                  37     NA
+ 9         9     7    16  1977       1 DM         F                  34     NA
+10        10     7    16  1977       6 PF         F                  20     NA
+# ℹ 4 more variables: genus <chr>, species <chr>, taxa <chr>, plot_type <chr>
 ```
 
 If we order them correctly, we don't have to name either:
@@ -147,23 +136,20 @@ head(complete_old, 10)
 ```
 
 ```{.output}
-  record_id month day year plot_id species_id sex hindfoot_length weight
-1         1     7  16 1977       2         NL   M              32     NA
-2         2     7  16 1977       3         NL   M              33     NA
-3         3     7  16 1977       2         DM   F              37     NA
-4         4     7  16 1977       7         DM   M              36     NA
-5         5     7  16 1977       3         DM   M              35     NA
-6         6     7  16 1977       1         PF   M              14     NA
-7         7     7  16 1977       2         PE   F              NA     NA
-        genus  species   taxa                plot_type
-1     Neotoma albigula Rodent                  Control
-2     Neotoma albigula Rodent Long-term Krat Exclosure
-3   Dipodomys merriami Rodent                  Control
-4   Dipodomys merriami Rodent         Rodent Exclosure
-5   Dipodomys merriami Rodent Long-term Krat Exclosure
-6 Perognathus   flavus Rodent        Spectab exclosure
-7  Peromyscus eremicus Rodent                  Control
- [ reached 'max' / getOption("max.print") -- omitted 3 rows ]
+# A tibble: 10 × 13
+   record_id month   day  year plot_id species_id sex   hindfoot_length weight
+       <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
+ 1         1     7    16  1977       2 NL         M                  32     NA
+ 2         2     7    16  1977       3 NL         M                  33     NA
+ 3         3     7    16  1977       2 DM         F                  37     NA
+ 4         4     7    16  1977       7 DM         M                  36     NA
+ 5         5     7    16  1977       3 DM         M                  35     NA
+ 6         6     7    16  1977       1 PF         M                  14     NA
+ 7         7     7    16  1977       2 PE         F                  NA     NA
+ 8         8     7    16  1977       1 DM         M                  37     NA
+ 9         9     7    16  1977       1 DM         F                  34     NA
+10        10     7    16  1977       6 PF         F                  20     NA
+# ℹ 4 more variables: genus <chr>, species <chr>, taxa <chr>, plot_type <chr>
 ```
 
 Additionally, if we name them, we can put them in any order we want:
@@ -174,23 +160,20 @@ head(n = 10, x = complete_old)
 ```
 
 ```{.output}
-  record_id month day year plot_id species_id sex hindfoot_length weight
-1         1     7  16 1977       2         NL   M              32     NA
-2         2     7  16 1977       3         NL   M              33     NA
-3         3     7  16 1977       2         DM   F              37     NA
-4         4     7  16 1977       7         DM   M              36     NA
-5         5     7  16 1977       3         DM   M              35     NA
-6         6     7  16 1977       1         PF   M              14     NA
-7         7     7  16 1977       2         PE   F              NA     NA
-        genus  species   taxa                plot_type
-1     Neotoma albigula Rodent                  Control
-2     Neotoma albigula Rodent Long-term Krat Exclosure
-3   Dipodomys merriami Rodent                  Control
-4   Dipodomys merriami Rodent         Rodent Exclosure
-5   Dipodomys merriami Rodent Long-term Krat Exclosure
-6 Perognathus   flavus Rodent        Spectab exclosure
-7  Peromyscus eremicus Rodent                  Control
- [ reached 'max' / getOption("max.print") -- omitted 3 rows ]
+# A tibble: 10 × 13
+   record_id month   day  year plot_id species_id sex   hindfoot_length weight
+       <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
+ 1         1     7    16  1977       2 NL         M                  32     NA
+ 2         2     7    16  1977       3 NL         M                  33     NA
+ 3         3     7    16  1977       2 DM         F                  37     NA
+ 4         4     7    16  1977       7 DM         M                  36     NA
+ 5         5     7    16  1977       3 DM         M                  35     NA
+ 6         6     7    16  1977       1 PF         M                  14     NA
+ 7         7     7    16  1977       2 PE         F                  NA     NA
+ 8         8     7    16  1977       1 DM         M                  37     NA
+ 9         9     7    16  1977       1 DM         F                  34     NA
+10        10     7    16  1977       6 PF         F                  20     NA
+# ℹ 4 more variables: genus <chr>, species <chr>, taxa <chr>, plot_type <chr>
 ```
 
 Generally, it's good practice to start with the required arguments, like the data.frame whose rows you want to see, and then to name the optional arguments. If you are ever unsure, it never hurts to explicitly name an argument.
@@ -237,20 +220,20 @@ str(complete_old)
 ```
 
 ```{.output}
-'data.frame':	16878 obs. of  13 variables:
- $ record_id      : int  1 2 3 4 5 6 7 8 9 10 ...
- $ month          : int  7 7 7 7 7 7 7 7 7 7 ...
- $ day            : int  16 16 16 16 16 16 16 16 16 16 ...
- $ year           : int  1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
- $ plot_id        : int  2 3 2 7 3 1 2 1 1 6 ...
- $ species_id     : chr  "NL" "NL" "DM" "DM" ...
- $ sex            : chr  "M" "M" "F" "M" ...
- $ hindfoot_length: int  32 33 37 36 35 14 NA 37 34 20 ...
- $ weight         : int  NA NA NA NA NA NA NA NA NA NA ...
- $ genus          : chr  "Neotoma" "Neotoma" "Dipodomys" "Dipodomys" ...
- $ species        : chr  "albigula" "albigula" "merriami" "merriami" ...
- $ taxa           : chr  "Rodent" "Rodent" "Rodent" "Rodent" ...
- $ plot_type      : chr  "Control" "Long-term Krat Exclosure" "Control" "Rodent Exclosure" ...
+tibble [16,878 × 13] (S3: tbl_df/tbl/data.frame)
+ $ record_id      : int [1:16878] 1 2 3 4 5 6 7 8 9 10 ...
+ $ month          : int [1:16878] 7 7 7 7 7 7 7 7 7 7 ...
+ $ day            : int [1:16878] 16 16 16 16 16 16 16 16 16 16 ...
+ $ year           : int [1:16878] 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
+ $ plot_id        : int [1:16878] 2 3 2 7 3 1 2 1 1 6 ...
+ $ species_id     : chr [1:16878] "NL" "NL" "DM" "DM" ...
+ $ sex            : chr [1:16878] "M" "M" "F" "M" ...
+ $ hindfoot_length: int [1:16878] 32 33 37 36 35 14 NA 37 34 20 ...
+ $ weight         : int [1:16878] NA NA NA NA NA NA NA NA NA NA ...
+ $ genus          : chr [1:16878] "Neotoma" "Neotoma" "Dipodomys" "Dipodomys" ...
+ $ species        : chr [1:16878] "albigula" "albigula" "merriami" "merriami" ...
+ $ taxa           : chr [1:16878] "Rodent" "Rodent" "Rodent" "Rodent" ...
+ $ plot_type      : chr [1:16878] "Control" "Long-term Krat Exclosure" "Control" "Rodent Exclosure" ...
 ```
 
 We get quite a bit of useful information here. First, we are told that we have a data.frame of 16878 observations, or rows, and 13 variables, or columns.
