@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.1",
+    "Version": "4.3.2",
     "Repositories": [
       {
         "Name": "carpentries",
@@ -1036,13 +1036,13 @@
     },
     "ratdat": {
       "Package": "ratdat",
-      "Version": "1.0.0",
+      "Version": "1.1.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R"
       ],
-      "Hash": "861918730cd53fbde00565f26b94e1c2"
+      "Hash": "5764aa379c01dc65f275059dd11e4556"
     },
     "readr": {
       "Package": "readr",
