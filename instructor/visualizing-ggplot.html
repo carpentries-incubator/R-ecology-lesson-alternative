@@ -320,13 +320,12 @@ package by running <code>install.packages("ggplot2")</code>. That
 installed the package onto your computer so that R can access it. In
 order to use it in our current session, we have to <strong>load</strong>
 the package using the <code>library()</code> function.</p>
-<div id="callout1" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>If you do not have <code>ggplot2</code> installed, you can run
 <code>install.packages("ggplot2")</code> in the
@@ -454,13 +453,12 @@ lessons.</p>
 <p><strong><code>ggplot</code></strong> plots are built step by step by
 adding new layers, which allows for extensive flexibility and
 customization of plots.</p>
-<div id="callout2" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Some languages, like Python, require certain spacing or indentation
 for code to run properly. This isn’t the case in R, so if you see spaces
@@ -474,7 +472,7 @@ different types of plots:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>MAPPINGS<span class="sc">&gt;</span>)) <span class="sc">+</span> <span class="er">&lt;</span>GEOM_FUNCTION<span class="sc">&gt;</span>()</span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>MAPPINGS<span class="sc">&gt;</span>)) <span class="sc">+</span> <span class="er">&lt;</span>GEOM_FUNCTION<span class="sc">&gt;</span>()</span></code></pre>
 </div>
 <p>We use the <code>ggplot()</code> function to create a plot. In order
 to tell it what data to use, we need to specify the <code>data</code>
@@ -525,13 +523,12 @@ variable necessary to make the plot is missing from a given row of data
 (in this case, <code>hindfoot_length</code> or <code>weight</code>), it
 can’t be plotted. <code>ggplot2</code> just uses a warning message to
 let us know that some rows couldn’t be plotted.</p>
-<div id="callout3" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout3"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p><strong>Warning</strong> messages are one of a few ways R will
 communicate with you. Warnings can be thought of as a “heads up”.
@@ -585,13 +582,12 @@ argument, which takes a value between 0 and 1:</p>
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">complete_old</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">weight</span>, y <span class="op">=</span> <span class="va">hindfoot_length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_point</span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.2</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/visualizing-ggplot-rendered-change-color-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout4" class="callout callout">
+<figure><img src="../fig/visualizing-ggplot-rendered-change-color-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout4"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Two common issues you might run into when working in R are forgetting
 a closing bracket or a closing quote. Let’s take a look at what each one
@@ -600,8 +596,8 @@ does.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span></span></code></pre>
 </div>
 <p>You will see a <code>+</code> appear in your console. This is R
 telling you that it expects more input in order to finish running the
@@ -612,8 +608,8 @@ it.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue, alpha = 0.2)</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue, alpha = 0.2)</span></span></code></pre>
 </div>
 <p>A missing quote at the end of <code>blue</code> means that the rest
 of the code is treated as part of the quote, which is a bit easier to
@@ -623,8 +619,8 @@ code:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="er">)</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="er">)</span></span></code></pre>
 </div>
 <p>This time we have an extra closing <code>)</code>, which R doesn’t
 know what to do with. It tells you there is an unexpected
@@ -809,13 +805,12 @@ the boxplot, not the rectangular portions. This is because the
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">complete_old</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">plot_type</span>, y <span class="op">=</span> <span class="va">hindfoot_length</span>, fill <span class="op">=</span> <span class="va">plot_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/visualizing-ggplot-rendered-boxplot-fill-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout5" class="callout callout">
+<figure><img src="../fig/visualizing-ggplot-rendered-boxplot-fill-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout5" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout5"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>One thing you may notice is that the axis labels are overlapping each
 other, depending on how wide your plot viewer is. One way to help make
@@ -1108,13 +1103,12 @@ information is already on our x axis. For this one, we will set
 <span>        panel.grid.major.x <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span>, </span>
 <span>        legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/visualizing-ggplot-rendered-legend-remove-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout6" class="callout callout">
+<figure><img src="../fig/visualizing-ggplot-rendered-legend-remove-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout6" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout6"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Because there are so many possible arguments to the
 <code>theme()</code> function, it can sometimes be hard to find the
@@ -1143,13 +1137,12 @@ title</li>
 </ul></div>
 </div>
 </div>
-<div id="callout7" class="callout callout">
+<div id="callout7" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout7"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>You may have noticed that we have used 3 different approaches to
 getting rid of something in <code>ggplot</code>:</p>
@@ -1273,13 +1266,12 @@ specify that we want them arranged in a single column:</p>
 <span>       color <span class="op">=</span> <span class="st">"Plot type"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="fu">vars</span><span class="op">(</span><span class="va">sex</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/visualizing-ggplot-rendered-facet-wrap-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout8" class="callout callout">
+<figure><img src="../fig/visualizing-ggplot-rendered-facet-wrap-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout8" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout8"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Faceting comes in handy in many scenarios. It can be useful when:</p>
 <ul><li>a categorical variable has too many levels to differentiate by color
@@ -1427,7 +1419,7 @@ appearance, and the <code>theme()</code> function to fine-tune</li>
   "identifier": "https://carpentries-incubator.github.io/R-ecology-lesson-alternative/instructor/visualizing-ggplot.html",
   "dateCreated": "2015-04-02",
   "dateModified": "2023-11-28",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

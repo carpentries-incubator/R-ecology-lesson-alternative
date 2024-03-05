@@ -825,13 +825,12 @@ package by running <code>install.packages("ggplot2")</code>. That
 installed the package onto your computer so that R can access it. In
 order to use it in our current session, we have to <strong>load</strong>
 the package using the <code>library()</code> function.</p>
-<div id="callout1" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>If you do not have <code>ggplot2</code> installed, you can run
 <code>install.packages("ggplot2")</code> in the
@@ -960,13 +959,12 @@ lessons.</p>
 <p><strong><code>ggplot</code></strong> plots are built step by step by
 adding new layers, which allows for extensive flexibility and
 customization of plots.</p>
-<div id="callout2" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Some languages, like Python, require certain spacing or indentation
 for code to run properly. This isn’t the case in R, so if you see spaces
@@ -980,7 +978,7 @@ different types of plots:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>MAPPINGS<span class="sc">&gt;</span>)) <span class="sc">+</span> <span class="er">&lt;</span>GEOM_FUNCTION<span class="sc">&gt;</span>()</span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>MAPPINGS<span class="sc">&gt;</span>)) <span class="sc">+</span> <span class="er">&lt;</span>GEOM_FUNCTION<span class="sc">&gt;</span>()</span></code></pre>
 </div>
 <p>We use the <code>ggplot()</code> function to create a plot. In order
 to tell it what data to use, we need to specify the <code>data</code>
@@ -1031,13 +1029,12 @@ variable necessary to make the plot is missing from a given row of data
 (in this case, <code>hindfoot_length</code> or <code>weight</code>), it
 can’t be plotted. <code>ggplot2</code> just uses a warning message to
 let us know that some rows couldn’t be plotted.</p>
-<div id="callout3" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout3"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p><strong>Warning</strong> messages are one of a few ways R will
 communicate with you. Warnings can be thought of as a “heads up”.
@@ -1092,13 +1089,12 @@ argument, which takes a value between 0 and 1:</p>
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">complete_old</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">weight</span>, y <span class="op">=</span> <span class="va">hindfoot_length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_point</span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.2</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/visualizing-ggplot-rendered-change-color-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout4" class="callout callout">
+<figure><img src="../fig/visualizing-ggplot-rendered-change-color-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout4"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Two common issues you might run into when working in R are forgetting
 a closing bracket or a closing quote. Let’s take a look at what each one
@@ -1107,8 +1103,8 @@ does.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span></span></code></pre>
 </div>
 <p>You will see a <code>+</code> appear in your console. This is R
 telling you that it expects more input in order to finish running the
@@ -1119,8 +1115,8 @@ it.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue, alpha = 0.2)</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue, alpha = 0.2)</span></span></code></pre>
 </div>
 <p>A missing quote at the end of <code>blue</code> means that the rest
 of the code is treated as part of the quote, which is a bit easier to
@@ -1130,8 +1126,8 @@ code:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="er">)</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> complete_old, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="er">)</span></span></code></pre>
 </div>
 <p>This time we have an extra closing <code>)</code>, which R doesn’t
 know what to do with. It tells you there is an unexpected
@@ -1326,13 +1322,12 @@ the boxplot, not the rectangular portions. This is because the
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">complete_old</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">plot_type</span>, y <span class="op">=</span> <span class="va">hindfoot_length</span>, fill <span class="op">=</span> <span class="va">plot_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/visualizing-ggplot-rendered-boxplot-fill-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout5" class="callout callout">
+<figure><img src="../fig/visualizing-ggplot-rendered-boxplot-fill-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout5" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout5"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>One thing you may notice is that the axis labels are overlapping each
 other, depending on how wide your plot viewer is. One way to help make
@@ -1630,13 +1625,12 @@ information is already on our x axis. For this one, we will set
 <span>        panel.grid.major.x <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span>, </span>
 <span>        legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/visualizing-ggplot-rendered-legend-remove-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout6" class="callout callout">
+<figure><img src="../fig/visualizing-ggplot-rendered-legend-remove-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout6" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout6"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Because there are so many possible arguments to the
 <code>theme()</code> function, it can sometimes be hard to find the
@@ -1673,13 +1667,12 @@ title</li>
 </div>
 </div>
 </div>
-<div id="callout7" class="callout callout">
+<div id="callout7" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout7"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>You may have noticed that we have used 3 different approaches to
 getting rid of something in <code>ggplot</code>:</p>
@@ -1810,13 +1803,12 @@ specify that we want them arranged in a single column:</p>
 <span>       color <span class="op">=</span> <span class="st">"Plot type"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="fu">vars</span><span class="op">(</span><span class="va">sex</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/visualizing-ggplot-rendered-facet-wrap-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout8" class="callout callout">
+<figure><img src="../fig/visualizing-ggplot-rendered-facet-wrap-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout8" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout8"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Faceting comes in handy in many scenarios. It can be useful when:</p>
 <ul>
@@ -2043,13 +2035,12 @@ documentation for that function:</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">?</span><span class="va">head</span></span></code></pre>
 </div>
-<div id="callout1" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Function documentation is written by the authors of the functions, so
 they can vary pretty widely in their style and readability. The first
@@ -3316,13 +3307,12 @@ dbl (7): record_id, month, day, year, plot_id, hindfoot_length, weight
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div id="callout1" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Typing out paths can be error prone, so we can utilize a keyboard
 shortcut. Inside the parentheses of <code>read_csv()</code>, type out a
@@ -3372,13 +3362,12 @@ data.frame. It <em>is</em> a data.frame, but with some added perks. It
 prints out a little more nicely, it highlights <code>NA</code> values
 and negative values in red, and it will generally communicate with you
 more (in terms of warnings and errors, which is a good thing).</p>
-<div id="callout2" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p><strong><code>tidyverse</code> vs. base R</strong></p>
 <p>As we begin to delve more deeply into the <code>tidyverse</code>, we
@@ -3424,13 +3413,12 @@ tasks.</p>
 functions: <code>select()</code>, which selects certain columns of a
 data.frame, and <code>filter()</code>, which filters out rows according
 to certain criteria.</p>
-<div id="callout3" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout3"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Between <code>select()</code> and <code>filter()</code>, it can be
 hard to remember which operates on columns and which operates on rows.
@@ -3703,7 +3691,7 @@ years from 1980 to 1985.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3736,7 +3724,7 @@ following columns, in order: <code>year</code>, <code>month</code>,
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3867,7 +3855,7 @@ verbs for names, a pipeline can be read like a sentence.</p>
   <h3 class="accordion-header" id="headingInstructor1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>Instructor Note</h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>It’s worth showing the learners that you can run a
 <strong>pipeline</strong> without highlighting the whole thing. If your
@@ -3915,7 +3903,7 @@ with data from the year 1988. Use a pipe between the function calls.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4219,7 +4207,7 @@ column and plots weight across date.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4653,7 +4641,7 @@ sex caught on each day in the <code>surveys</code> data.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb76">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4706,7 +4694,7 @@ corresponds to which sex.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb79">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5123,8 +5111,8 @@ thoughtfully</li>
   "url": "https://carpentries-incubator.github.io/R-ecology-lesson-alternative/instructor/aio.html",
   "identifier": "https://carpentries-incubator.github.io/R-ecology-lesson-alternative/instructor/aio.html",
   "dateCreated": "2015-04-02",
-  "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "dateModified": "2024-03-05",
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
