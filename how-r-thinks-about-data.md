@@ -26,7 +26,7 @@ exercises: 3
 
 
 
-```r
+``` r
 library(tidyverse)
 library(ratdat)
 ```
@@ -38,22 +38,22 @@ We just spent quite a bit of time learning how to create visualizations from the
 The `complete_old` data is stored in R as a **data.frame**, which is the most common way that R represents tabular data (data that can be stored in a table format, like a spreadsheet). We can check what `complete_old` is by using the `class()` function:
 
 
-```r
+``` r
 class(complete_old)
 ```
 
-```{.output}
+``` output
 [1] "tbl_df"     "tbl"        "data.frame"
 ```
 
 We can view the first few rows with the `head()` function, and the last few rows with the `tail()` function:
 
 
-```r
+``` r
 head(complete_old)
 ```
 
-```{.output}
+``` output
 # A tibble: 6 × 13
   record_id month   day  year plot_id species_id sex   hindfoot_length weight
       <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
@@ -66,11 +66,11 @@ head(complete_old)
 # ℹ 4 more variables: genus <chr>, species <chr>, taxa <chr>, plot_type <chr>
 ```
 
-```r
+``` r
 tail(complete_old)
 ```
 
-```{.output}
+``` output
 # A tibble: 6 × 13
   record_id month   day  year plot_id species_id sex   hindfoot_length weight
       <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
@@ -88,7 +88,7 @@ We used these functions with just one argument, the object `complete_old`, and w
 To learn more about a function, you can type a `?` in front of the name of the function, which will bring up the official documentation for that function:
 
 
-```r
+``` r
 ?head
 ```
 
@@ -107,11 +107,11 @@ Many of the answers you find will be from a website called Stack Overflow, where
 Some arguments are optional. For example, the `n` argument in `head()` specifies the number of rows to print. It defaults to 6, but we can override that by specifying a different number:
 
 
-```r
+``` r
 head(complete_old, n = 10)
 ```
 
-```{.output}
+``` output
 # A tibble: 10 × 13
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
        <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
@@ -131,11 +131,11 @@ head(complete_old, n = 10)
 If we order them correctly, we don't have to name either:
 
 
-```r
+``` r
 head(complete_old, 10)
 ```
 
-```{.output}
+``` output
 # A tibble: 10 × 13
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
        <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
@@ -155,11 +155,11 @@ head(complete_old, 10)
 Additionally, if we name them, we can put them in any order we want:
 
 
-```r
+``` r
 head(n = 10, x = complete_old)
 ```
 
-```{.output}
+``` output
 # A tibble: 10 × 13
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
        <int> <int> <int> <int>   <int> <chr>      <chr>           <int>  <int>
@@ -181,11 +181,11 @@ Generally, it's good practice to start with the required arguments, like the dat
 Let's get back to investigating our `complete_old` data.frame. We can get some useful summaries of each variable using the `summary()` function:
 
 
-```r
+``` r
 summary(complete_old)
 ```
 
-```{.output}
+``` output
    record_id         month             day            year         plot_id     
  Min.   :    1   Min.   : 1.000   Min.   : 1.0   Min.   :1977   Min.   : 1.00  
  1st Qu.: 4220   1st Qu.: 3.000   1st Qu.: 9.0   1st Qu.:1981   1st Qu.: 5.00  
@@ -215,11 +215,11 @@ summary(complete_old)
 And, as we have already done, we can use `str()` to look at the structure of an object:
 
 
-```r
+``` r
 str(complete_old)
 ```
 
-```{.output}
+``` output
 tibble [16,878 × 13] (S3: tbl_df/tbl/data.frame)
  $ record_id      : int [1:16878] 1 2 3 4 5 6 7 8 9 10 ...
  $ month          : int [1:16878] 7 7 7 7 7 7 7 7 7 7 ...
@@ -243,11 +243,11 @@ Next, we get a bit of information on each variable, including its type (`int` or
 The `$` operator also allows you to use tab-completion to quickly select which variable you want from a given data.frame. For example, to get the `year` variable, we can type `complete_old$` and then hit <kbd>Tab</kbd>. We get a list of the variables that we can move through with up and down arrow keys. Hit <kbd>Enter</kbd> when you reach `year`, which should finish this code:
 
 
-```r
+``` r
 complete_old$year
 ```
 
-```{.output}
+``` output
   [1] 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977
  [16] 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977
  [31] 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 1977
@@ -281,29 +281,29 @@ Vectors can only be of a **single type**. Since each column in a data.frame is a
 To create a vector from scratch, we can use the `c()` function, putting values inside, separated by commas.
 
 
-```r
+``` r
 c(1, 2, 5, 12, 4)
 ```
 
-```{.output}
+``` output
 [1]  1  2  5 12  4
 ```
 
 As you can see, those values get printed out in the console, just like with `complete_old$year`. To store this vector so we can continue to work with it, we need to assign it to an object.
 
 
-```r
+``` r
 num <- c(1, 2, 5, 12, 4)
 ```
 
 You can check what kind of object `num` is with the `class()` function.
 
 
-```r
+``` r
 class(num)
 ```
 
-```{.output}
+``` output
 [1] "numeric"
 ```
 
@@ -312,12 +312,12 @@ We see that `num` is a `numeric` vector.
 Let's try making a character vector:
 
 
-```r
+``` r
 char <- c("apple", "pear", "grape")
 class(char)
 ```
 
-```{.output}
+``` output
 [1] "character"
 ```
 
@@ -326,12 +326,12 @@ Remember that each entry, like `"apple"`, needs to be surrounded by quotes, and 
 Finally, let's make a logical vector:
 
 
-```r
+``` r
 logi <- c(TRUE, FALSE, TRUE, TRUE)
 class(logi)
 ```
 
-```{.output}
+``` output
 [1] "logical"
 ```
 
@@ -344,7 +344,7 @@ Since vectors can only hold one type of data, something has to be done when we t
 1. What type will each of these vectors be? Try to guess without running any code at first, then run the code and use `class()` to verify your answers.
 
 
-```r
+``` r
 num_logi <- c(1, 4, 6, TRUE)
 num_char <- c(1, 3, "10", 6)
 char_logi <- c("a", "b", TRUE)
@@ -356,35 +356,35 @@ tricky <- c("a", "b", "1", FALSE)
 :::::::::::::::::::::::: solution 
 
 
-```r
+``` r
 class(num_logi)
 ```
 
-```{.output}
+``` output
 [1] "numeric"
 ```
 
-```r
+``` r
 class(num_char)
 ```
 
-```{.output}
+``` output
 [1] "character"
 ```
 
-```r
+``` r
 class(char_logi)
 ```
 
-```{.output}
+``` output
 [1] "character"
 ```
 
-```r
+``` r
 class(tricky)
 ```
 
-```{.output}
+``` output
 [1] "character"
 ```
 
@@ -395,26 +395,26 @@ R will automatically convert values in a vector so that they are all the same ty
 2. How many values in `combined_logical` are `"TRUE"` (as a character)? 
 
 
-```r
+``` r
 combined_logical <- c(num_logi, char_logi)
 ```
 
 :::::::::::::::::::::::: solution 
 
 
-```r
+``` r
 combined_logical
 ```
 
-```{.output}
+``` output
 [1] "1"    "4"    "6"    "1"    "a"    "b"    "TRUE"
 ```
 
-```r
+``` r
 class(combined_logical)
 ```
 
-```{.output}
+``` output
 [1] "character"
 ```
  
@@ -440,29 +440,29 @@ Coercion is not something you will often do intentionally; rather, when combinin
 One of the great things about R is how it handles missing data, which can be tricky in other programming languages. R represents missing data as `NA`, without quotes, in vectors of any type. Let's make a numeric vector with an `NA` value:
 
 
-```r
+``` r
 weights <- c(25, 34, 12, NA, 42)
 ```
 
 R doesn't make assumptions about how you want to handle missing data, so if we pass this vector to a numeric function like `min()`, it won't know what to do, so it returns `NA`:
 
 
-```r
+``` r
 min(weights)
 ```
 
-```{.output}
+``` output
 [1] NA
 ```
 
 This is a very good thing, since we won't accidentally forget to consider our missing data. If we decide to exclude our missing values, many basic math functions have an argument to **r**e**m**ove them:
 
 
-```r
+``` r
 min(weights, na.rm = TRUE)
 ```
 
-```{.output}
+``` output
 [1] 12
 ```
 
@@ -471,11 +471,11 @@ min(weights, na.rm = TRUE)
 A common reason to create a vector from scratch is to use in a function argument. The `quantile()` function will calculate a quantile for a given vector of numeric values. We set the quantile using the `probs` argument. We also need to set `na.rm = TRUE`, since there are `NA` values in the `weight` column.
 
 
-```r
+``` r
 quantile(complete_old$weight, probs = 0.25, na.rm = TRUE)
 ```
 
-```{.output}
+``` output
 25% 
  24 
 ```
@@ -483,11 +483,11 @@ quantile(complete_old$weight, probs = 0.25, na.rm = TRUE)
 Now we get back the 25% quantile value for weights. However, we often want to know more than one quantile. Luckily, the `probs` argument is **vectorized**, meaning it can take a whole vector of values. Let's try getting the 25%, 50% (median), and 75% quantiles all at once.
 
 
-```r
+``` r
 quantile(complete_old$weight, probs = c(0.25, 0.5, 0.75), na.rm = TRUE)
 ```
 
-```{.output}
+``` output
 25% 50% 75% 
  24  42  53 
 ```
@@ -497,16 +497,16 @@ While the `c()` function is very flexible, it doesn't necessarily scale well. If
 First, putting `:` between two numbers will generate a vector of integers starting with the first number and ending with the last. The `seq()` function allows you to generate similar sequences, but changing by any amount.
 
 
-```r
+``` r
 # generates a sequence of integers
 1:10
 ```
 
-```{.output}
+``` output
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
 
-```r
+``` r
 # with seq() you can generate sequences with a combination of:
 # from: starting value
 # to: ending value
@@ -515,15 +515,15 @@ First, putting `:` between two numbers will generate a vector of integers starti
 seq(from = 0, to = 1, by = 0.1)
 ```
 
-```{.output}
+``` output
  [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
 ```
 
-```r
+``` r
 seq(from = 0, to = 1, length.out = 50)
 ```
 
-```{.output}
+``` output
  [1] 0.00000000 0.02040816 0.04081633 0.06122449 0.08163265 0.10204082
  [7] 0.12244898 0.14285714 0.16326531 0.18367347 0.20408163 0.22448980
 [13] 0.24489796 0.26530612 0.28571429 0.30612245 0.32653061 0.34693878
@@ -535,11 +535,11 @@ seq(from = 0, to = 1, length.out = 50)
 [49] 0.97959184 1.00000000
 ```
 
-```r
+``` r
 seq(from = 0, by = 0.01, length.out = 20)
 ```
 
-```{.output}
+``` output
  [1] 0.00 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.10 0.11 0.12 0.13 0.14
 [16] 0.15 0.16 0.17 0.18 0.19
 ```
@@ -547,30 +547,30 @@ seq(from = 0, by = 0.01, length.out = 20)
 Finally, the `rep()` function allows you to repeat a value, or even a whole vector, as many times as you want, and works with any type of vector.
 
 
-```r
+``` r
 # repeats "a" 12 times
 rep("a", times = 12)
 ```
 
-```{.output}
+``` output
  [1] "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a"
 ```
 
-```r
+``` r
 # repeats this whole sequence 4 times
 rep(c("a", "b", "c"), times = 4)
 ```
 
-```{.output}
+``` output
  [1] "a" "b" "c" "a" "b" "c" "a" "b" "c" "a" "b" "c"
 ```
 
-```r
+``` r
 # repeats each value 4 times
 rep(1:10, each = 4)
 ```
 
-```{.output}
+``` output
  [1]  1  1  1  1  2  2  2  2  3  3  3  3  4  4  4  4  5  5  5  5  6  6  6  6  7
 [26]  7  7  7  8  8  8  8  9  9  9  9 10 10 10 10
 ```
@@ -582,38 +582,38 @@ rep(1:10, each = 4)
 1. Write some code to generate the following vector:
 
 
-```{.output}
+``` output
  [1] -3 -2 -1  0  1  2  3 -3 -2 -1  0  1  2  3 -3 -2 -1  0  1  2  3
 ```
 
 :::::::::::::::::::::::: solution 
 
 
-```r
+``` r
 rep(-3:3, 3)
 ```
 
-```{.output}
+``` output
  [1] -3 -2 -1  0  1  2  3 -3 -2 -1  0  1  2  3 -3 -2 -1  0  1  2  3
 ```
 
-```r
+``` r
 # this also works
 rep(seq(from = -3, to = 3, by = 1), 3)
 ```
 
-```{.output}
+``` output
  [1] -3 -2 -1  0  1  2  3 -3 -2 -1  0  1  2  3 -3 -2 -1  0  1  2  3
 ```
 
-```r
+``` r
 # you might also store the sequence as an intermediate vector
 
 my_seq <- seq(from = -3, to = 3, by = 1)
 rep(my_seq, 3)
 ```
 
-```{.output}
+``` output
  [1] -3 -2 -1  0  1  2  3 -3 -2 -1  0  1  2  3 -3 -2 -1  0  1  2  3
 ```
 
@@ -624,13 +624,13 @@ rep(my_seq, 3)
 :::::::::::::::::::::::: solution 
 
 
-```r
+``` r
 quantile(complete_old$hindfoot_length, 
          probs = seq(from = 0, to = 1, by = 0.05),
          na.rm = T)
 ```
 
-```{.output}
+``` output
   0%   5%  10%  15%  20%  25%  30%  35%  40%  45%  50%  55%  60%  65%  70%  75% 
    6   16   17   19   20   21   22   31   33   34   35   35   36   36   36   37 
  80%  85%  90%  95% 100% 
@@ -665,13 +665,13 @@ We have now seen vectors in a few different forms: as columns in a data.frame an
 We will spend a bit more time talking about factors, since they are often a challenging type of data to work with. We can create a factor from scratch by putting a character vector made using `c()` into the `factor()` function:
 
 
-```r
+``` r
 sex <- factor(c("male", "female", "female", "male", "female", NA))
 
 sex
 ```
 
-```{.output}
+``` output
 [1] male   female female male   female <NA>  
 Levels: female male
 ```
@@ -679,53 +679,45 @@ Levels: female male
 We can inspect the levels of the factor using the `levels()` function:
 
 
-```r
+``` r
 levels(sex)
 ```
 
-```{.output}
+``` output
 [1] "female" "male"  
 ```
 
 The **`forcats`** package from the `tidyverse` has a lot of convenient functions for working with factors. We will show you a few common operations, but the `forcats` package has many more useful functions.
 
 
-```r
+``` r
 library(forcats)
 
 # change the order of the levels
 fct_relevel(sex, c("male", "female"))
 ```
 
-```{.output}
+``` output
 [1] male   female female male   female <NA>  
 Levels: male female
 ```
 
-```r
+``` r
 # change the names of the levels
 fct_recode(sex, "M" = "male", "F" = "female")
 ```
 
-```{.output}
+``` output
 [1] M    F    F    M    F    <NA>
 Levels: F M
 ```
 
-```r
+``` r
 # turn NAs into an actual factor level (useful for including NAs in plots)
-fct_explicit_na(sex)
+fct_na_value_to_level(sex, "(Missing)")
 ```
 
-```{.warning}
-Warning: `fct_explicit_na()` was deprecated in forcats 1.0.0.
-ℹ Please use `fct_na_value_to_level()` instead.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.
-```
-
-```{.output}
+``` output
 [1] male      female    female    male      female    (Missing)
 Levels: female male (Missing)
 ```
@@ -740,34 +732,34 @@ Since factors can behave differently from character vectors, it is always a good
 It is fairly straightforward to convert a factor to a character vector:
 
 
-```r
+``` r
 as.character(sex)
 ```
 
-```{.output}
+``` output
 [1] "male"   "female" "female" "male"   "female" NA      
 ```
 
 However, you need to be careful if you're somehow working with a factor that has numbers as its levels:
 
 
-```r
+``` r
 f_num <- factor(c(1990, 1983, 1977, 1998, 1990))
 
 # this will pull out the underlying integers, not the levels
 as.numeric(f_num)
 ```
 
-```{.output}
+``` output
 [1] 3 2 1 4 3
 ```
 
-```r
+``` r
 # if we first convert to characters, we can then convert to numbers
 as.numeric(as.character(f_num))
 ```
 
-```{.output}
+``` output
 [1] 1990 1983 1977 1998 1990
 ```
 
@@ -782,7 +774,7 @@ We've already created quite a few objects in R using the `<-` assignment arrow, 
 What is the value of `y` after running the following code?
 
 
-```r
+``` r
 x <- 5
 y <- x
 x <- 10
@@ -792,14 +784,14 @@ x <- 10
 :::::::::::::::::::::::: solution
 
 
-```r
+``` r
 x <- 5
 y <- x
 x <- 10
 y
 ```
 
-```{.output}
+``` output
 [1] 5
 ```
 
@@ -811,7 +803,7 @@ Understanding what's going on here will help you avoid a lot of confusion when w
 This also means you can run multiple nested operations, store intermediate values as separate objects, or overwrite values:
 
 
-```r
+``` r
 x <- 5
 
 # first, x gets evaluated to 5
@@ -820,11 +812,11 @@ x <- 5
 sqrt(x/2)
 ```
 
-```{.output}
+``` output
 [1] 1.581139
 ```
 
-```r
+``` r
 # we can also store the evaluated value of x/2 
 # in an object y before passing it to sqrt()
 y <- x/2
@@ -832,11 +824,11 @@ y <- x/2
 sqrt(y)
 ```
 
-```{.output}
+``` output
 [1] 1.581139
 ```
 
-```r
+``` r
 # first, the x on the righthand side gets evaluated to 5
 # then 5 gets squared
 # then the resulting value is assigned to the object x
@@ -846,7 +838,7 @@ x <- x^2
 x
 ```
 
-```{.output}
+``` output
 [1] 25
 ```
 

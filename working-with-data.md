@@ -64,7 +64,7 @@ exercises: 4
 
 
 
-```r
+``` r
 library(tidyverse)
 ```
 
@@ -72,7 +72,7 @@ library(tidyverse)
 
 Up until this point, we have been working with the `complete_old` dataframe contained in the `ratdat` package. However, you typically won't access data from an R package; it is much more common to access data files stored somewhere on your computer. We are going to download a CSV file containing the surveys data to our computer, which we will then read into R.
 
-Click this link to download the file: <https://www.michaelc-m.com/Rewrite-R-ecology-lesson/data/cleaned/surveys_complete_77_89.csv>.
+Click this link to download the file: <https://datacarpentry.org/R-ecology-lesson-alternative/data/cleaned/surveys_complete_77_89.csv>.
 
 You will be prompted to save the file on your computer somewhere. Save it inside the `cleaned` data folder, which is in the `data` folder in your `R-Ecology-Workshop` folder. Once it's inside our project, we will be able to point R towards it.
 
@@ -85,11 +85,11 @@ There are two kinds of paths: **absolute** and **relative**. Absolute paths are 
 Now, let's read our CSV file into R and store it in an object named `surveys`. We will use the `read_csv` function from the `tidyverse`'s `readr` package, and the argument we give will be the **relative path** to the CSV file.
 
 
-```r
+``` r
 surveys <- read_csv("data/cleaned/surveys_complete_77_89.csv")
 ```
 
-```{.output}
+``` output
 Rows: 16878 Columns: 13
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
@@ -118,11 +118,11 @@ You may have noticed a bit of feedback from R when you ran the last line of code
 When working with the output of a new function, it's often a good idea to check the `class()`:
 
 
-```r
+``` r
 class(surveys)
 ```
 
-```{.output}
+``` output
 [1] "spec_tbl_df" "tbl_df"      "tbl"         "data.frame" 
 ```
 
@@ -157,11 +157,11 @@ Between `select()` and `filter()`, it can be hard to remember which operates on 
 To use the `select()` function, the first argument is the name of the data.frame, and the rest of the arguments are *unquoted* names of the columns you want:
 
 
-```r
+``` r
 select(surveys, plot_id, species_id, hindfoot_length)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 3
    plot_id species_id hindfoot_length
      <dbl> <chr>                <dbl>
@@ -183,11 +183,11 @@ The columns are arranged in the order we specified inside `select()`.
 To select all columns except specific columns, put a `-` in front of the column you want to exclude:
 
 
-```r
+``` r
 select(surveys, -record_id, -year)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 11
    month   day plot_id species_id sex   hindfoot_length weight genus     species
    <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl> <chr>     <chr>  
@@ -208,11 +208,11 @@ select(surveys, -record_id, -year)
 `select()` also works with numeric vectors for the order of the columns. To select the 3rd, 4th, 5th, and 10th columns, we could run the following code:
 
 
-```r
+``` r
 select(surveys, c(3:5, 10))
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 4
      day  year plot_id genus      
    <dbl> <dbl>   <dbl> <chr>      
@@ -234,11 +234,11 @@ You should be careful when using this method, since you are being less explicit 
 Finally, you can select columns based on whether they match a certain criteria by using the `where()` function. If we want all numeric columns, we can ask to `select` all the columns `where` the class `is numeric`:
 
 
-```r
+``` r
 select(surveys, where(is.numeric))
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 7
    record_id month   day  year plot_id hindfoot_length weight
        <dbl> <dbl> <dbl> <dbl>   <dbl>           <dbl>  <dbl>
@@ -260,11 +260,11 @@ Instead of giving names or positions of columns, we instead pass the `where()` f
 We can use this to select any columns that have any `NA` values in them:
 
 
-```r
+``` r
 select(surveys, where(anyNA))
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 7
    species_id sex   hindfoot_length weight genus       species  taxa  
    <chr>      <chr>           <dbl>  <dbl> <chr>       <chr>    <chr> 
@@ -286,11 +286,11 @@ select(surveys, where(anyNA))
 The `filter()` function is used to select rows that meet certain criteria. To get all the rows where the value of `year` is equal to 1985, we would run the following:
 
 
-```r
+``` r
 filter(surveys, year == 1985)
 ```
 
-```{.output}
+``` output
 # A tibble: 1,438 × 13
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
@@ -311,11 +311,11 @@ filter(surveys, year == 1985)
 The `==` sign means "is equal to". There are several other operators we can use: >, >=, <, <=, and != (not equal to). Another useful operator is `%in%`, which asks if the value on the lefthand side is found anywhere in the vector on the righthand side. For example, to get rows with specific `species_id` values, we could run:
 
 
-```r
+``` r
 filter(surveys, species_id %in% c("RM", "DO"))
 ```
 
-```{.output}
+``` output
 # A tibble: 2,835 × 13
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
@@ -336,11 +336,11 @@ filter(surveys, species_id %in% c("RM", "DO"))
 We can also use multiple conditions in one `filter()` statement. Here we will get rows with a year less than or equal to 1988 and whose hindfoot length values are not `NA`. The `!` before the `is.na()` function means "not".
 
 
-```r
+``` r
 filter(surveys, year <= 1988 & !is.na(hindfoot_length))
 ```
 
-```{.output}
+``` output
 # A tibble: 12,779 × 13
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
@@ -368,7 +368,7 @@ filter(surveys, year <= 1988 & !is.na(hindfoot_length))
 :::::::::::::::::::::::: solution
 
 
-```r
+``` r
 surveys_filtered <- filter(surveys, year >= 1980 & year <= 1985)
 ```
 
@@ -379,7 +379,7 @@ surveys_filtered <- filter(surveys, year >= 1980 & year <= 1985)
 :::::::::::::::::::::::: solution
 
 
-```r
+``` r
 surveys_selected <- select(surveys, year, month, species_id, plot_id)
 ```
 
@@ -392,11 +392,11 @@ surveys_selected <- select(surveys, year, month, species_id, plot_id)
 What happens if we want to both `select()` and `filter()` our data? We have a couple options. First, we could use **nested** functions:
 
 
-```r
+``` r
 filter(select(surveys, -day), month >= 7)
 ```
 
-```{.output}
+``` output
 # A tibble: 8,244 × 12
    record_id month  year plot_id species_id sex   hindfoot_length weight genus  
        <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl> <chr>  
@@ -419,12 +419,12 @@ R will evaluate statements from the inside out. First, `select()` will operate o
 Nested functions can be very difficult to read with only a few functions, and nearly impossible when many functions are done at once. An alternative approach is to create **intermediate** objects:
 
 
-```r
+``` r
 surveys_noday <- select(surveys, -day)
 filter(surveys_noday, month >= 7)
 ```
 
-```{.output}
+``` output
 # A tibble: 8,244 × 12
    record_id month  year plot_id species_id sex   hindfoot_length weight genus  
        <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl> <chr>  
@@ -447,13 +447,13 @@ This approach is easier to read, since we can see the steps in order, but after 
 An elegant solution to this problem is an operator called the **pipe**, which looks like `%>%`. You can insert it by using the keyboard shortcut <kbd>Shift+Cmd+M</kbd> (Mac) or <kbd>Shift+Ctrl+M</kbd> (Windows). Here's how you could use a pipe to select and filter in one step:
 
 
-```r
+``` r
 surveys %>% 
   select(-day) %>% 
   filter(month >= 7)
 ```
 
-```{.output}
+``` output
 # A tibble: 8,244 × 12
    record_id month  year plot_id species_id sex   hindfoot_length weight genus  
        <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl> <chr>  
@@ -483,7 +483,7 @@ You can also show that by highlighting a section of a pipeline, you can run only
 If we want to store this final product as an object, we use an assignment arrow at the start:
 
 
-```r
+``` r
 surveys_sub <- surveys %>% 
   select(-day) %>% 
   filter(month >= 7)
@@ -500,7 +500,7 @@ Use the surveys data to make a data.frame that has the columns `record_id`, `mon
 :::::::::::::::::::::::: solution
 
 
-```r
+``` r
 surveys_1988 <- surveys %>%
   filter(year == 1988) %>%
   select(record_id, month, species_id)
@@ -517,12 +517,12 @@ Make sure to `filter()` before you `select()`. You need to use the `year` column
 Another common task is creating a new column based on values in existing columns. For example, we could add a new column that has the weight in kilograms instead of grams:
 
 
-```r
+``` r
 surveys %>% 
   mutate(weight_kg = weight / 1000)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 14
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
@@ -544,13 +544,13 @@ surveys %>%
 You can create multiple columns in one `mutate()` call, and they will get created in the order you write them. This means you can even reference the first new column in the second new column:
 
 
-```r
+``` r
 surveys %>% 
   mutate(weight_kg = weight / 1000,
          weight_lbs = weight_kg * 2.2)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 15
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
@@ -576,12 +576,12 @@ We can also use multiple columns to create a single column. For example, it's of
 To put together the columns into something that looks like a date, we can use the `paste()` function, which takes arguments of the items to paste together, as well as the argument `sep`, which is the character used to separate the items.
 
 
-```r
+``` r
 surveys %>% 
   mutate(date = paste(year, month, day, sep = "-"))
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 14
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
@@ -603,13 +603,13 @@ surveys %>%
 Since our new column gets moved all the way to the end, it doesn't end up printing out. We can use the `relocate()` function to put it after our `year` column:
 
 
-```r
+``` r
 surveys %>% 
   mutate(date = paste(year, month, day, sep = "-")) %>% 
   relocate(date, .after = year)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 14
    record_id month   day  year date     plot_id species_id sex   hindfoot_length
        <dbl> <dbl> <dbl> <dbl> <chr>      <dbl> <chr>      <chr>           <dbl>
@@ -631,7 +631,7 @@ surveys %>%
 Now we can see that we have a character column that contains our date string. However, it's not truly a date column. Dates are a type of numeric variable with a defined, ordered scale. To turn this column into a proper date, we will use a function from the `tidyverse`'s `lubridate` package, which has lots of useful functions for working with dates. The function `ymd()` will parse a date string that has the order year-month-day. Let's load the package and use `ymd()`.
 
 
-```r
+``` r
 library(lubridate)
 
 surveys %>% 
@@ -640,7 +640,7 @@ surveys %>%
   relocate(date, .after = year)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 14
    record_id month   day  year date       plot_id species_id sex  
        <dbl> <dbl> <dbl> <dbl> <date>       <dbl> <chr>      <chr>
@@ -659,14 +659,14 @@ surveys %>%
 #   species <chr>, taxa <chr>, plot_type <chr>
 ```
 
-```r
+``` r
 surveys %>% 
   mutate(date = paste(year, month, day, sep = "-"),
          date = as.Date(date)) %>% 
   relocate(date, .after = year)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 14
    record_id month   day  year date       plot_id species_id sex  
        <dbl> <dbl> <dbl> <dbl> <date>       <dbl> <chr>      <chr>
@@ -690,14 +690,14 @@ surveys %>%
 Now we can see that our `date` column has the type `date` as well. In this example, we created our column with two separate lines in `mutate()`, but we can combine them into one:
 
 
-```r
+``` r
 # using nested functions
 surveys %>% 
   mutate(date = ymd(paste(year, month, day, sep = "-"))) %>% 
   relocate(date, .after = year)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 14
    record_id month   day  year date       plot_id species_id sex  
        <dbl> <dbl> <dbl> <dbl> <date>       <dbl> <chr>      <chr>
@@ -716,7 +716,7 @@ surveys %>%
 #   species <chr>, taxa <chr>, plot_type <chr>
 ```
 
-```r
+``` r
 # using a pipe *inside* mutate()
 surveys %>% 
   mutate(date = paste(year, month, day, 
@@ -724,7 +724,7 @@ surveys %>%
   relocate(date, .after = year)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 14
    record_id month   day  year date       plot_id species_id sex  
        <dbl> <dbl> <dbl> <dbl> <date>       <dbl> <chr>      <chr>
@@ -752,15 +752,16 @@ Because the `ggplot()` function takes the data as its first argument, you can ac
 :::::::::::::::::::::::: solution 
 
 
-```r
+``` r
 surveys %>% 
   mutate(date = ymd(paste(year, month, day, sep = "-"))) %>% 
   ggplot(aes(x = date, y = weight)) +
   geom_jitter(alpha = 0.1)
 ```
 
-```{.warning}
-Warning: Removed 1692 rows containing missing values (`geom_point()`).
+``` warning
+Warning: Removed 1692 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
 
 <img src="fig/working-with-data-rendered-date-plot-challenge-answer-1.png" width="600" height="600" style="display: block; margin: auto;" />
@@ -778,13 +779,13 @@ Many data analysis tasks can be achieved using the split-apply-combine approach:
 `group_by()` takes a data.frame and the name of one or more columns with categorical values that define the groups. `summarize()` then collapses each group into a one-row summary of the group, giving you back a data.frame with one row per group. The syntax for `summarize()` is similar to `mutate()`, where you define new columns based on values of other columns. Let's try calculating the mean weight of all our animals by sex.
 
 
-```r
+``` r
 surveys %>% 
   group_by(sex) %>% 
   summarize(mean_weight = mean(weight, na.rm = T))
 ```
 
-```{.output}
+``` output
 # A tibble: 3 × 2
   sex   mean_weight
   <chr>       <dbl>
@@ -796,14 +797,14 @@ surveys %>%
 You can see that the mean weight for males is slightly higher than for females, but that animals whose sex is unknown have much higher weights. This is probably due to small sample size, but we should check to be sure. Like `mutate()`, we can define multiple columns in one `summarize()` call. The function `n()` will count the number of rows in each group.
 
 
-```r
+``` r
 surveys %>% 
   group_by(sex) %>% 
   summarize(mean_weight = mean(weight, na.rm = T),
             n = n())
 ```
 
-```{.output}
+``` output
 # A tibble: 3 × 3
   sex   mean_weight     n
   <chr>       <dbl> <int>
@@ -815,19 +816,19 @@ surveys %>%
 You will often want to create groups based on multiple columns. For example, we might be interested in the mean weight of every species + sex combination. All we have to do is add another column to our `group_by()` call.
 
 
-```r
+``` r
 surveys %>% 
   group_by(species_id, sex) %>% 
   summarize(mean_weight = mean(weight, na.rm = T),
             n = n())
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'species_id'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+``` output
 # A tibble: 67 × 4
 # Groups:   species_id [36]
    species_id sex   mean_weight     n
@@ -848,7 +849,7 @@ surveys %>%
 Our resulting data.frame is much larger, since we have a greater number of groups. We also see a strange value showing up in our `mean_weight` column: `NaN`. This stands for "Not a Number", and it often results from trying to do an operation a vector with zero entries. How can a vector have zero entries? Well, if a particular group (like the AB species ID + `NA` sex group) has **only** `NA` values for weight, then the `na.rm = T` argument in `mean()` will remove **all** the values prior to calculating the mean. The result will be a value of `NaN`. Since we are not particularly interested in these values, let's add a step to our pipeline to remove rows where weight is `NA` **before** doing any other steps. This means that any groups with only `NA` values will disappear from our data.frame before we formally create the groups with `group_by()`.
 
 
-```r
+``` r
 surveys %>% 
   filter(!is.na(weight)) %>% 
   group_by(species_id, sex) %>% 
@@ -856,12 +857,12 @@ surveys %>%
             n = n())
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'species_id'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+``` output
 # A tibble: 46 × 4
 # Groups:   species_id [18]
    species_id sex   mean_weight     n
@@ -882,7 +883,7 @@ surveys %>%
 That looks better! It's often useful to take a look at the results in some order, like the lowest mean weight to highest. We can use the `arrange()` function for that:
 
 
-```r
+``` r
 surveys %>% 
   filter(!is.na(weight)) %>% 
   group_by(species_id, sex) %>% 
@@ -891,12 +892,12 @@ surveys %>%
   arrange(mean_weight)
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'species_id'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+``` output
 # A tibble: 46 × 4
 # Groups:   species_id [18]
    species_id sex   mean_weight     n
@@ -917,7 +918,7 @@ surveys %>%
 If we want to reverse the order, we can wrap the column name in `desc()`:
 
 
-```r
+``` r
 surveys %>% 
   filter(!is.na(weight)) %>% 
   group_by(species_id, sex) %>% 
@@ -926,12 +927,12 @@ surveys %>%
   arrange(desc(mean_weight))
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'species_id'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+``` output
 # A tibble: 46 × 4
 # Groups:   species_id [18]
    species_id sex   mean_weight     n
@@ -959,12 +960,12 @@ You may have seen several messages saying `summarise() has grouped output by 'sp
 They tell us we have a data.frame with 46 rows, 4 columns, and a group variable `species_id`, for which there are 18 groups. We will see something similar if we use `group_by()` alone:
 
 
-```r
+``` r
 surveys %>% 
   group_by(species_id, sex)
 ```
 
-```{.output}
+``` output
 # A tibble: 16,878 × 13
 # Groups:   species_id, sex [67]
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
@@ -986,7 +987,7 @@ surveys %>%
 What we get back is the entire `surveys` data.frame, but with the grouping variables added: 67 groups of `species_id` + `sex` combinations. Groups are often maintained throughout a pipeline, and if you assign the resulting data.frame to a new object, it will also have those groups. This can lead to confusing results if you forget about the grouping and want to carry out operations on the whole data.frame, not by group. Therefore, it is a good habit to remove the groups at the end of a pipeline containing `group_by()`:
 
 
-```r
+``` r
 surveys %>% 
   filter(!is.na(weight)) %>% 
   group_by(species_id, sex) %>% 
@@ -996,12 +997,12 @@ surveys %>%
   ungroup()
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'species_id'. You can override using the
 `.groups` argument.
 ```
 
-```{.output}
+``` output
 # A tibble: 46 × 4
    species_id sex   mean_weight     n
    <chr>      <chr>       <dbl> <int>
@@ -1023,7 +1024,7 @@ Now our data.frame just says `# A tibble: 46 × 4` at the top, with no groups.
 While it is common that you will want to get the one-row-per-group summary that `summarise()` provides, there are times where you want to calculate a per-group value but keep all the rows in your data.frame. For example, we might want to know the mean weight for each species ID + sex combination, and then we might want to know how far from that mean value each observation in the group is. For this, we can use `group_by()` and `mutate()` together:
 
 
-```r
+``` r
 surveys %>% 
   filter(!is.na(weight)) %>% 
   group_by(species_id, sex) %>% 
@@ -1031,7 +1032,7 @@ surveys %>%
             weight_diff = weight - mean_weight)
 ```
 
-```{.output}
+``` output
 # A tibble: 15,186 × 15
 # Groups:   species_id, sex [46]
    record_id month   day  year plot_id species_id sex   hindfoot_length weight
@@ -1054,7 +1055,7 @@ surveys %>%
 Since we get all our columns back, the new columns are at the very end and don't print out in the console. Let's use `select()` to just look at the columns of interest. Inside `select()` we can use the `contains()` function to get any column containing the word "weight" in the name:
 
 
-```r
+``` r
 surveys %>% 
   filter(!is.na(weight)) %>% 
   group_by(species_id, sex) %>% 
@@ -1063,7 +1064,7 @@ surveys %>%
   select(species_id, sex, contains("weight"))
 ```
 
-```{.output}
+``` output
 # A tibble: 15,186 × 5
 # Groups:   species_id, sex [46]
    species_id sex   weight mean_weight weight_diff
@@ -1092,19 +1093,19 @@ What happens with the `group_by()` + `mutate()` combination is similar to using 
 :::::::::::::::::::::::: solution 
 
 
-```r
+``` r
 surveys_daily_counts <- surveys %>% 
   mutate(date = ymd(paste(year, month, day, sep = "-"))) %>% 
   group_by(date, sex) %>% 
   summarize(n = n())
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'date'. You can override using the
 `.groups` argument.
 ```
 
-```r
+``` r
 # shorter approach using count()
 surveys_daily_counts <- surveys %>% 
   mutate(date = ymd(paste(year, month, day, sep = "-"))) %>% 
@@ -1118,7 +1119,7 @@ surveys_daily_counts <- surveys %>%
 :::::::::::::::::::::::: solution 
 
 
-```r
+``` r
 surveys_daily_counts %>% 
   ggplot(aes(x = date, y = n, color = sex)) +
   geom_line()
@@ -1135,7 +1136,7 @@ surveys_daily_counts %>%
 Let's say we are interested in comparing the mean weights of each species across our different plots. We can begin this process using the `group_by()` + `summarize()` approach:
 
 
-```r
+``` r
 sp_by_plot <- surveys %>% 
   filter(!is.na(weight)) %>% 
   group_by(species_id, plot_id) %>% 
@@ -1143,16 +1144,16 @@ sp_by_plot <- surveys %>%
   arrange(species_id, plot_id)
 ```
 
-```{.output}
+``` output
 `summarise()` has grouped output by 'species_id'. You can override using the
 `.groups` argument.
 ```
 
-```r
+``` r
 sp_by_plot
 ```
 
-```{.output}
+``` output
 # A tibble: 300 × 3
 # Groups:   species_id [18]
    species_id plot_id mean_weight
@@ -1185,7 +1186,7 @@ Any columns not used for `names_from` or `values_from` will not be pivoted.
 In our case, we want the new columns to be named from our `plot_id` column, with the values coming from the `mean_weight` column. We can pipe our data.frame right into `pivot_wider()` and add those two arguments:
 
 
-```r
+``` r
 sp_by_plot_wide <- sp_by_plot %>% 
   pivot_wider(names_from = plot_id, 
               values_from = mean_weight)
@@ -1193,7 +1194,7 @@ sp_by_plot_wide <- sp_by_plot %>%
 sp_by_plot_wide
 ```
 
-```{.output}
+``` output
 # A tibble: 18 × 25
 # Groups:   species_id [18]
    species_id    `3`   `21`    `1`    `2`    `4`   `5`    `6`   `7`    `8`
@@ -1228,12 +1229,12 @@ Finally, a lot of `NA`s have appeared. Some species aren't found in every plot, 
 Looking in our new pivoted data.frame, we can see that there is an `NA` value for the species `BA` in plot `1`. Let's take our `sp_by_plot` data.frame and look for the `mean_weight` of that species + plot combination.
 
 
-```r
+``` r
 sp_by_plot %>% 
   filter(species_id == "BA" & plot_id == 1)
 ```
 
-```{.output}
+``` output
 # A tibble: 0 × 3
 # Groups:   species_id [0]
 # ℹ 3 variables: species_id <chr>, plot_id <dbl>, mean_weight <dbl>
@@ -1248,12 +1249,12 @@ There is another `pivot_` function that does the opposite, moving data from a wi
 We can pivot our new wide data.frame to a long format using `pivot_longer()`. We want to pivot all the columns except `species_id`, and we will use `PLOT` for the new column of plot IDs, and `MEAN_WT` for the new column of mean weight values.
 
 
-```r
+``` r
 sp_by_plot_wide %>% 
   pivot_longer(cols = -species_id, names_to = "PLOT", values_to = "MEAN_WT")
 ```
 
-```{.output}
+``` output
 # A tibble: 432 × 3
 # Groups:   species_id [18]
    species_id PLOT  MEAN_WT
@@ -1274,13 +1275,13 @@ sp_by_plot_wide %>%
 One thing you will notice is that all those `NA` values that got generated when we pivoted wider. However, we can filter those out, which gets us back to the same data as `sp_by_plot`, before we pivoted it wider.
 
 
-```r
+``` r
 sp_by_plot_wide %>% 
   pivot_longer(cols = -species_id, names_to = "PLOT", values_to = "MEAN_WT") %>% 
   filter(!is.na(MEAN_WT))
 ```
 
-```{.output}
+``` output
 # A tibble: 300 × 3
 # Groups:   species_id [18]
    species_id PLOT  MEAN_WT
@@ -1307,13 +1308,13 @@ Let's say we want to send the wide version of our `sb_by_plot` data.frame to a c
 First, we might want to modify the names of the columns, since right now they are bare numbers, which aren't very informative. Luckily, `pivot_wider()` has an argument `names_prefix` which will allow us to add "plot_" to the start of each column.
 
 
-```r
+``` r
 sp_by_plot %>% 
   pivot_wider(names_from = plot_id, values_from = mean_weight,
               names_prefix = "plot_")
 ```
 
-```{.output}
+``` output
 # A tibble: 18 × 25
 # Groups:   species_id [18]
    species_id plot_3 plot_21 plot_1 plot_2 plot_4 plot_5 plot_6 plot_7 plot_8
@@ -1345,7 +1346,7 @@ sp_by_plot %>%
 That looks better! Let's save this data.frame as a new object.
 
 
-```r
+``` r
 surveys_sp <- sp_by_plot %>% 
   pivot_wider(names_from = plot_id, values_from = mean_weight,
               names_prefix = "plot_")
@@ -1353,7 +1354,7 @@ surveys_sp <- sp_by_plot %>%
 surveys_sp
 ```
 
-```{.output}
+``` output
 # A tibble: 18 × 25
 # Groups:   species_id [18]
    species_id plot_3 plot_21 plot_1 plot_2 plot_4 plot_5 plot_6 plot_7 plot_8
@@ -1385,7 +1386,7 @@ surveys_sp
 Now we can save this data.frame to a CSV using the `write_csv()` function from the `readr` package. The first argument is the name of the data.frame, and the second is the path to the new file we want to create, including the file extension `.csv`.
 
 
-```r
+``` r
 write_csv(surveys_sp, "data/cleaned/surveys_meanweight_species_plot.csv")
 ```
 
