@@ -256,7 +256,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data visualization with ggplot2</h1>
-        <p>Last updated on 2024-03-12 |
+        <p>Last updated on 2024-06-04 |
         
         <a href="https://github.com/datacarpentry/R-ecology-lesson-alternative/edit/main/episodes/visualizing-ggplot.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -516,7 +516,8 @@ line with the <code>+</code> sign.</p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 3081 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 3081 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="../fig/visualizing-ggplot-rendered-scatter-plot-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>You may notice a warning that missing values were removed. If a
 variable necessary to make the plot is missing from a given row of data
@@ -784,7 +785,8 @@ the y axis. We can do this by adding <code>geom_boxplot()</code> to our
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2733 rows containing non-finite values (`stat_boxplot()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2733 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
 </div>
 <figure><img src="../fig/visualizing-ggplot-rendered-boxplot-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Just as we colored the points before, we can color our boxplot by
 <code>plot_type</code> as well:</p>
@@ -1041,12 +1043,14 @@ like if you ran the code itself.</p>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2733 rows containing non-finite values (`stat_boxplot()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2733 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code>Warning: Removed 2733 rows containing missing values (`geom_point()`).</code></pre>
+<pre class="warning" tabindex="0"><code>Warning: Removed 2733 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
 </div>
 <figure><img src="../fig/visualizing-ggplot-rendered-unnamed-chunk-1-1.png" width="600" height="600" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>This process of assigning something to an <strong>object</strong> is
 not specific to <code>ggplot2</code>, but rather a general feature of R.
@@ -1424,8 +1428,8 @@ appearance, and the <code>theme()</code> function to fine-tune</li>
   "url": "https://datacarpentry.github.io/R-ecology-lesson-alternative/instructor/visualizing-ggplot.html",
   "identifier": "https://datacarpentry.github.io/R-ecology-lesson-alternative/instructor/visualizing-ggplot.html",
   "dateCreated": "2015-04-02",
-  "dateModified": "2024-03-12",
-  "datePublished": "2024-05-14"
+  "dateModified": "2024-06-04",
+  "datePublished": "2024-06-11"
 }
 
   </script><script>
