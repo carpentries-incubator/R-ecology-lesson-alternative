@@ -46,7 +46,7 @@
             </li>
           </ul></li>
       </div>
-      
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Learner View <i data-feather="chevron-down"></i>
@@ -170,7 +170,7 @@
                 </div><!--/div.accordion-flush-->
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
-      
+
             <hr></div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordionFlush11">
@@ -189,7 +189,7 @@
     <div class="accordion-header" id="flush-heading1">
         <a href="index.html">Summary and Setup</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -198,7 +198,7 @@
     <div class="accordion-header" id="flush-heading2">
         <a href="introduction-r-rstudio.html">1. Introduction to R and RStudio</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -207,7 +207,7 @@
     <div class="accordion-header" id="flush-heading3">
         <a href="visualizing-ggplot.html">2. Data visualization with ggplot2</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -216,7 +216,7 @@
     <div class="accordion-header" id="flush-heading4">
         <a href="how-r-thinks-about-data.html">3. Exploring and understanding data</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -230,7 +230,7 @@
         </span>
       </button>
     </div><!--/div.accordion-header-->
-        
+
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#importing-data">Importing data</a></li>
@@ -242,7 +242,7 @@
 <li><a href="#exporting-data">Exporting data</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -274,10 +274,10 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
-            
+
             </div>
           </div><!-- /div.accordion -->
         </div><!-- /div.sidebar-inner -->
@@ -304,12 +304,12 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Working with data</h1>
-        <p>Last updated on 2024-07-02 |
-        
+        <p>Last updated on 2024-07-08 |
+
         <a href="https://github.com/datacarpentry/R-ecology-lesson-alternative/edit/main/episodes/working-with-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-        
-        
-        
+
+
+
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -351,8 +351,8 @@ approaches.</li>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span></code></pre>
 </div>
-<section id="importing-data"><h2 class="section-heading">Importing data<a class="anchor" aria-label="anchor" href="#importing-data"></a>
-</h2>
+<section><h2 class="section-heading" id="importing-data">Importing data<a class="anchor" aria-label="anchor" href="#importing-data"></a>
+<a class="anchor" aria-label="anchor" href="#importing-data"></a></h2>
 <hr class="half-width"><p>Up until this point, we have been working with the
 <code>complete_old</code> dataframe contained in the <code>ratdat</code>
 package. However, you typically won’t access data from an R package; it
@@ -494,8 +494,8 @@ approaches will be relevant into the future.</p>
 </div>
 </div>
 </div>
-</section><section id="manipulating-data"><h2 class="section-heading">Manipulating data<a class="anchor" aria-label="anchor" href="#manipulating-data"></a>
-</h2>
+</section><section><h2 class="section-heading" id="manipulating-data">Manipulating data<a class="anchor" aria-label="anchor" href="#manipulating-data"></a>
+<a class="anchor" aria-label="anchor" href="#manipulating-data"></a></h2>
 <hr class="half-width"><p>One of the most important skills for working with data in R is the
 ability to manipulate, modify, and reshape data. The <code>dplyr</code>
 and <code>tidyr</code> packages in the <code>tidyverse</code> provide a
@@ -566,17 +566,17 @@ in front of the column you want to exclude:</p>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 16,878 × 11
    month   day plot_id species_id sex   hindfoot_length weight genus     species
-   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  
+   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;
  1     7    16       2 NL         M                  32     NA Neotoma   albigu…
  2     7    16       3 NL         M                  33     NA Neotoma   albigu…
  3     7    16       2 DM         F                  37     NA Dipodomys merria…
  4     7    16       7 DM         M                  36     NA Dipodomys merria…
  5     7    16       3 DM         M                  35     NA Dipodomys merria…
- 6     7    16       1 PF         M                  14     NA Perognat… flavus 
+ 6     7    16       1 PF         M                  14     NA Perognat… flavus
  7     7    16       2 PE         F                  NA     NA Peromysc… eremic…
  8     7    16       1 DM         M                  37     NA Dipodomys merria…
  9     7    16       1 DM         F                  34     NA Dipodomys merria…
-10     7    16       6 PF         F                  20     NA Perognat… flavus 
+10     7    16       6 PF         F                  20     NA Perognat… flavus
 # ℹ 16,868 more rows
 # ℹ 2 more variables: taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
 </div>
@@ -593,17 +593,17 @@ run the following code:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 16,878 × 4
-     day  year plot_id genus      
-   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      
- 1    16  1977       2 Neotoma    
- 2    16  1977       3 Neotoma    
- 3    16  1977       2 Dipodomys  
- 4    16  1977       7 Dipodomys  
- 5    16  1977       3 Dipodomys  
+     day  year plot_id genus
+   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;
+ 1    16  1977       2 Neotoma
+ 2    16  1977       3 Neotoma
+ 3    16  1977       2 Dipodomys
+ 4    16  1977       7 Dipodomys
+ 5    16  1977       3 Dipodomys
  6    16  1977       1 Perognathus
- 7    16  1977       2 Peromyscus 
- 8    16  1977       1 Dipodomys  
- 9    16  1977       1 Dipodomys  
+ 7    16  1977       2 Peromyscus
+ 8    16  1977       1 Dipodomys
+ 9    16  1977       1 Dipodomys
 10    16  1977       6 Perognathus
 # ℹ 16,868 more rows</code></pre>
 </div>
@@ -655,8 +655,8 @@ values in them:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 16,878 × 7
-   species_id sex   hindfoot_length weight genus       species  taxa  
-   &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt; 
+   species_id sex   hindfoot_length weight genus       species  taxa
+   &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;
  1 NL         M                  32     NA Neotoma     albigula Rodent
  2 NL         M                  33     NA Neotoma     albigula Rodent
  3 DM         F                  37     NA Dipodomys   merriami Rodent
@@ -823,8 +823,8 @@ following columns, in order: <code>year</code>, <code>month</code>,
 </div>
 </div>
 </div>
-</section><section id="the-pipe"><h2 class="section-heading">The pipe: <code>%&gt;%</code><a class="anchor" aria-label="anchor" href="#the-pipe"></a>
-</h2>
+</section><section><h2 class="section-heading" id="the-pipe">The pipe: <code>%&gt;%</code><a class="anchor" aria-label="anchor" href="#the-pipe"></a>
+<a class="anchor" aria-label="anchor" href="#the-pipe"></a></h2>
 <hr class="half-width"><p>What happens if we want to both <code>select()</code> and
 <code>filter()</code> our data? We have a couple options. First, we
 could use <strong>nested</strong> functions:</p>
@@ -838,8 +838,8 @@ could use <strong>nested</strong> functions:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 8,244 × 12
-   record_id month  year plot_id species_id sex   hindfoot_length weight genus  
-       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  
+   record_id month  year plot_id species_id sex   hindfoot_length weight genus
+       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;
  1         1     7  1977       2 NL         M                  32     NA Neotoma
  2         2     7  1977       3 NL         M                  33     NA Neotoma
  3         3     7  1977       2 DM         F                  37     NA Dipodo…
@@ -873,8 +873,8 @@ objects:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 8,244 × 12
-   record_id month  year plot_id species_id sex   hindfoot_length weight genus  
-       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  
+   record_id month  year plot_id species_id sex   hindfoot_length weight genus
+       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;
  1         1     7  1977       2 NL         M                  32     NA Neotoma
  2         2     7  1977       3 NL         M                  33     NA Neotoma
  3         3     7  1977       2 DM         F                  37     NA Dipodo…
@@ -908,8 +908,8 @@ select and filter in one step:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 8,244 × 12
-   record_id month  year plot_id species_id sex   hindfoot_length weight genus  
-       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  
+   record_id month  year plot_id species_id sex   hindfoot_length weight genus
+       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;
  1         1     7  1977       2 NL         M                  32     NA Neotoma
  2         2     7  1977       3 NL         M                  33     NA Neotoma
  3         3     7  1977       2 DM         F                  37     NA Dipodo…
@@ -990,8 +990,8 @@ filtering rows where <code>year</code> is equal to 1988.</p>
 </div>
 </div>
 </div>
-</section><section id="making-new-columns-with-mutate"><h2 class="section-heading">Making new columns with <code>mutate()</code><a class="anchor" aria-label="anchor" href="#making-new-columns-with-mutate"></a>
-</h2>
+</section><section><h2 class="section-heading" id="making-new-columns-with-mutate">Making new columns with <code>mutate()</code><a class="anchor" aria-label="anchor" href="#making-new-columns-with-mutate"></a>
+<a class="anchor" aria-label="anchor" href="#making-new-columns-with-mutate"></a></h2>
 <hr class="half-width"><p>Another common task is creating a new column based on values in
 existing columns. For example, we could add a new column that has the
 weight in kilograms instead of grams:</p>
@@ -1145,18 +1145,18 @@ string that has the order year-month-day. Let’s load the package and use
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 16,878 × 14
-   record_id month   day  year date       plot_id species_id sex  
+   record_id month   day  year date       plot_id species_id sex
        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;
- 1         1     7    16  1977 1977-07-16       2 NL         M    
- 2         2     7    16  1977 1977-07-16       3 NL         M    
- 3         3     7    16  1977 1977-07-16       2 DM         F    
- 4         4     7    16  1977 1977-07-16       7 DM         M    
- 5         5     7    16  1977 1977-07-16       3 DM         M    
- 6         6     7    16  1977 1977-07-16       1 PF         M    
- 7         7     7    16  1977 1977-07-16       2 PE         F    
- 8         8     7    16  1977 1977-07-16       1 DM         M    
- 9         9     7    16  1977 1977-07-16       1 DM         F    
-10        10     7    16  1977 1977-07-16       6 PF         F    
+ 1         1     7    16  1977 1977-07-16       2 NL         M
+ 2         2     7    16  1977 1977-07-16       3 NL         M
+ 3         3     7    16  1977 1977-07-16       2 DM         F
+ 4         4     7    16  1977 1977-07-16       7 DM         M
+ 5         5     7    16  1977 1977-07-16       3 DM         M
+ 6         6     7    16  1977 1977-07-16       1 PF         M
+ 7         7     7    16  1977 1977-07-16       2 PE         F
+ 8         8     7    16  1977 1977-07-16       1 DM         M
+ 9         9     7    16  1977 1977-07-16       1 DM         F
+10        10     7    16  1977 1977-07-16       6 PF         F
 # ℹ 16,868 more rows
 # ℹ 6 more variables: hindfoot_length &lt;dbl&gt;, weight &lt;dbl&gt;, genus &lt;chr&gt;,
 #   species &lt;chr&gt;, taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
@@ -1174,18 +1174,18 @@ string that has the order year-month-day. Let’s load the package and use
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 16,878 × 14
-   record_id month   day  year date       plot_id species_id sex  
+   record_id month   day  year date       plot_id species_id sex
        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;
- 1         1     7    16  1977 1977-07-16       2 NL         M    
- 2         2     7    16  1977 1977-07-16       3 NL         M    
- 3         3     7    16  1977 1977-07-16       2 DM         F    
- 4         4     7    16  1977 1977-07-16       7 DM         M    
- 5         5     7    16  1977 1977-07-16       3 DM         M    
- 6         6     7    16  1977 1977-07-16       1 PF         M    
- 7         7     7    16  1977 1977-07-16       2 PE         F    
- 8         8     7    16  1977 1977-07-16       1 DM         M    
- 9         9     7    16  1977 1977-07-16       1 DM         F    
-10        10     7    16  1977 1977-07-16       6 PF         F    
+ 1         1     7    16  1977 1977-07-16       2 NL         M
+ 2         2     7    16  1977 1977-07-16       3 NL         M
+ 3         3     7    16  1977 1977-07-16       2 DM         F
+ 4         4     7    16  1977 1977-07-16       7 DM         M
+ 5         5     7    16  1977 1977-07-16       3 DM         M
+ 6         6     7    16  1977 1977-07-16       1 PF         M
+ 7         7     7    16  1977 1977-07-16       2 PE         F
+ 8         8     7    16  1977 1977-07-16       1 DM         M
+ 9         9     7    16  1977 1977-07-16       1 DM         F
+10        10     7    16  1977 1977-07-16       6 PF         F
 # ℹ 16,868 more rows
 # ℹ 6 more variables: hindfoot_length &lt;dbl&gt;, weight &lt;dbl&gt;, genus &lt;chr&gt;,
 #   species &lt;chr&gt;, taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
@@ -1208,18 +1208,18 @@ into one:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 16,878 × 14
-   record_id month   day  year date       plot_id species_id sex  
+   record_id month   day  year date       plot_id species_id sex
        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;
- 1         1     7    16  1977 1977-07-16       2 NL         M    
- 2         2     7    16  1977 1977-07-16       3 NL         M    
- 3         3     7    16  1977 1977-07-16       2 DM         F    
- 4         4     7    16  1977 1977-07-16       7 DM         M    
- 5         5     7    16  1977 1977-07-16       3 DM         M    
- 6         6     7    16  1977 1977-07-16       1 PF         M    
- 7         7     7    16  1977 1977-07-16       2 PE         F    
- 8         8     7    16  1977 1977-07-16       1 DM         M    
- 9         9     7    16  1977 1977-07-16       1 DM         F    
-10        10     7    16  1977 1977-07-16       6 PF         F    
+ 1         1     7    16  1977 1977-07-16       2 NL         M
+ 2         2     7    16  1977 1977-07-16       3 NL         M
+ 3         3     7    16  1977 1977-07-16       2 DM         F
+ 4         4     7    16  1977 1977-07-16       7 DM         M
+ 5         5     7    16  1977 1977-07-16       3 DM         M
+ 6         6     7    16  1977 1977-07-16       1 PF         M
+ 7         7     7    16  1977 1977-07-16       2 PE         F
+ 8         8     7    16  1977 1977-07-16       1 DM         M
+ 9         9     7    16  1977 1977-07-16       1 DM         F
+10        10     7    16  1977 1977-07-16       6 PF         F
 # ℹ 16,868 more rows
 # ℹ 6 more variables: hindfoot_length &lt;dbl&gt;, weight &lt;dbl&gt;, genus &lt;chr&gt;,
 #   species &lt;chr&gt;, taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
@@ -1238,18 +1238,18 @@ into one:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code># A tibble: 16,878 × 14
-   record_id month   day  year date       plot_id species_id sex  
+   record_id month   day  year date       plot_id species_id sex
        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;
- 1         1     7    16  1977 1977-07-16       2 NL         M    
- 2         2     7    16  1977 1977-07-16       3 NL         M    
- 3         3     7    16  1977 1977-07-16       2 DM         F    
- 4         4     7    16  1977 1977-07-16       7 DM         M    
- 5         5     7    16  1977 1977-07-16       3 DM         M    
- 6         6     7    16  1977 1977-07-16       1 PF         M    
- 7         7     7    16  1977 1977-07-16       2 PE         F    
- 8         8     7    16  1977 1977-07-16       1 DM         M    
- 9         9     7    16  1977 1977-07-16       1 DM         F    
-10        10     7    16  1977 1977-07-16       6 PF         F    
+ 1         1     7    16  1977 1977-07-16       2 NL         M
+ 2         2     7    16  1977 1977-07-16       3 NL         M
+ 3         3     7    16  1977 1977-07-16       2 DM         F
+ 4         4     7    16  1977 1977-07-16       7 DM         M
+ 5         5     7    16  1977 1977-07-16       3 DM         M
+ 6         6     7    16  1977 1977-07-16       1 PF         M
+ 7         7     7    16  1977 1977-07-16       2 PE         F
+ 8         8     7    16  1977 1977-07-16       1 DM         M
+ 9         9     7    16  1977 1977-07-16       1 DM         F
+10        10     7    16  1977 1977-07-16       6 PF         F
 # ℹ 16,868 more rows
 # ℹ 6 more variables: hindfoot_length &lt;dbl&gt;, weight &lt;dbl&gt;, genus &lt;chr&gt;,
 #   species &lt;chr&gt;, taxa &lt;chr&gt;, plot_type &lt;chr&gt;</code></pre>
@@ -1297,8 +1297,8 @@ techniques that will help produce nice time series plots</p>
 </div>
 </div>
 </div>
-</section><section id="the-split-apply-combine-approach"><h2 class="section-heading">The split-apply-combine approach<a class="anchor" aria-label="anchor" href="#the-split-apply-combine-approach"></a>
-</h2>
+</section><section><h2 class="section-heading" id="the-split-apply-combine-approach">The split-apply-combine approach<a class="anchor" aria-label="anchor" href="#the-split-apply-combine-approach"></a>
+<a class="anchor" aria-label="anchor" href="#the-split-apply-combine-approach"></a></h2>
 <hr class="half-width"><p>Many data analysis tasks can be achieved using the
 split-apply-combine approach: you split the data into groups, apply some
 analysis to each group, and combine the results in some way.
@@ -1669,15 +1669,15 @@ containing the word “weight” in the name:</p>
 # Groups:   species_id, sex [46]
    species_id sex   weight mean_weight weight_diff
    &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
- 1 DM         M         40       44.0      -4.00  
- 2 DM         M         48       44.0       4.00  
- 3 DM         F         29       40.7     -11.7   
- 4 DM         F         46       40.7       5.28  
- 5 DM         M         36       44.0      -8.00  
- 6 DO         F         52       48.4       3.63  
- 7 PF         M          8        7.10      0.902 
- 8 OX         F         22       21         1     
- 9 DM         F         35       40.7      -5.72  
+ 1 DM         M         40       44.0      -4.00
+ 2 DM         M         48       44.0       4.00
+ 3 DM         F         29       40.7     -11.7
+ 4 DM         F         46       40.7       5.28
+ 5 DM         M         36       44.0      -8.00
+ 6 DO         F         52       48.4       3.63
+ 7 PF         M          8        7.10      0.902
+ 8 OX         F         22       21         1
+ 9 DM         F         35       40.7      -5.72
 10 PF         M          7        7.10     -0.0980
 # ℹ 15,176 more rows</code></pre>
 </div>
@@ -1772,8 +1772,8 @@ corresponds to which sex.</li>
 </div>
 </div>
 </div>
-</section><section id="reshaping-data-with-tidyr"><h2 class="section-heading">Reshaping data with <code>tidyr</code><a class="anchor" aria-label="anchor" href="#reshaping-data-with-tidyr"></a>
-</h2>
+</section><section><h2 class="section-heading" id="reshaping-data-with-tidyr">Reshaping data with <code>tidyr</code><a class="anchor" aria-label="anchor" href="#reshaping-data-with-tidyr"></a>
+<a class="anchor" aria-label="anchor" href="#reshaping-data-with-tidyr"></a></h2>
 <hr class="half-width"><p>Let’s say we are interested in comparing the mean weights of each
 species across our different plots. We can begin this process using the
 <code>group_by()</code> + <code>summarize()</code> approach:</p>
@@ -1806,7 +1806,7 @@ species across our different plots. We can begin this process using the
 # Groups:   species_id [18]
    species_id plot_id mean_weight
    &lt;chr&gt;        &lt;dbl&gt;       &lt;dbl&gt;
- 1 BA               3         8  
+ 1 BA               3         8
  2 BA              21         6.5
  3 DM               1        42.7
  4 DM               2        42.6
@@ -1861,24 +1861,24 @@ values of the new columns?</li>
 # Groups:   species_id [18]
    species_id    `3`   `21`    `1`    `2`    `4`   `5`    `6`   `7`    `8`
    &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
- 1 BA           8      6.5   NA     NA     NA     NA    NA     NA    NA   
- 2 DM          41.2   41.5   42.7   42.6   41.9   42.6  42.1   43.2  43.4 
- 3 DO          42.7   NA     50.1   50.3   46.8   50.4  49.0   52    49.2 
- 4 DS         128.    NA    129.   125.   118.   111.  114.   126.  128.  
- 5 NL         171.   136.   154.   171.   164.   192.  176.   170.  134.  
- 6 OL          32.1   28.6   35.5   34     33.0   32.6  31.8   NA    30.3 
- 7 OT          24.1   24.1   23.7   24.9   26.5   23.6  23.5   22    24.1 
- 8 OX          22     NA     NA     22     NA     20    NA     NA    NA   
- 9 PE          22.7   19.6   21.6   22.0   NA     21    21.6   22.8  19.4 
+ 1 BA           8      6.5   NA     NA     NA     NA    NA     NA    NA
+ 2 DM          41.2   41.5   42.7   42.6   41.9   42.6  42.1   43.2  43.4
+ 3 DO          42.7   NA     50.1   50.3   46.8   50.4  49.0   52    49.2
+ 4 DS         128.    NA    129.   125.   118.   111.  114.   126.  128.
+ 5 NL         171.   136.   154.   171.   164.   192.  176.   170.  134.
+ 6 OL          32.1   28.6   35.5   34     33.0   32.6  31.8   NA    30.3
+ 7 OT          24.1   24.1   23.7   24.9   26.5   23.6  23.5   22    24.1
+ 8 OX          22     NA     NA     22     NA     20    NA     NA    NA
+ 9 PE          22.7   19.6   21.6   22.0   NA     21    21.6   22.8  19.4
 10 PF           7.12   7.23   6.57   6.89   6.75   7.5   7.54   7     6.78
-11 PH          28     31     NA     NA     NA     29    NA     NA    NA   
-12 PM          20.1   23.6   23.7   23.9   NA     23.7  22.3   23.4  23   
-13 PP          17.1   13.6   14.3   16.4   14.8   19.8  16.8   NA    13.9 
-14 RF          14.8   17     NA     16     NA     14    12.1   13    NA   
-15 RM          10.3    9.89  10.9   10.6   10.4   10.8  10.6   10.7   9   
-16 SF          NA     49     NA     NA     NA     NA    NA     NA    NA   
-17 SH          76.0   79.9   NA     88     NA     82.7  NA     NA    NA   
-18 SS          NA     NA     NA     NA     NA     NA    NA     NA    NA   
+11 PH          28     31     NA     NA     NA     29    NA     NA    NA
+12 PM          20.1   23.6   23.7   23.9   NA     23.7  22.3   23.4  23
+13 PP          17.1   13.6   14.3   16.4   14.8   19.8  16.8   NA    13.9
+14 RF          14.8   17     NA     16     NA     14    12.1   13    NA
+15 RM          10.3    9.89  10.9   10.6   10.4   10.8  10.6   10.7   9
+16 SF          NA     49     NA     NA     NA     NA    NA     NA    NA
+17 SH          76.0   79.9   NA     88     NA     82.7  NA     NA    NA
+18 SS          NA     NA     NA     NA     NA     NA    NA     NA    NA
 # ℹ 15 more variables: `9` &lt;dbl&gt;, `10` &lt;dbl&gt;, `11` &lt;dbl&gt;, `12` &lt;dbl&gt;,
 #   `13` &lt;dbl&gt;, `14` &lt;dbl&gt;, `15` &lt;dbl&gt;, `16` &lt;dbl&gt;, `17` &lt;dbl&gt;, `18` &lt;dbl&gt;,
 #   `19` &lt;dbl&gt;, `20` &lt;dbl&gt;, `22` &lt;dbl&gt;, `23` &lt;dbl&gt;, `24` &lt;dbl&gt;</code></pre>
@@ -1947,16 +1947,16 @@ weight values.</p>
 # Groups:   species_id [18]
    species_id PLOT  MEAN_WT
    &lt;chr&gt;      &lt;chr&gt;   &lt;dbl&gt;
- 1 BA         3         8  
+ 1 BA         3         8
  2 BA         21        6.5
- 3 BA         1        NA  
- 4 BA         2        NA  
- 5 BA         4        NA  
- 6 BA         5        NA  
- 7 BA         6        NA  
- 8 BA         7        NA  
- 9 BA         8        NA  
-10 BA         9        NA  
+ 3 BA         1        NA
+ 4 BA         2        NA
+ 5 BA         4        NA
+ 6 BA         5        NA
+ 7 BA         6        NA
+ 8 BA         7        NA
+ 9 BA         8        NA
+10 BA         9        NA
 # ℹ 422 more rows</code></pre>
 </div>
 <p>One thing you will notice is that all those <code>NA</code> values
@@ -1978,7 +1978,7 @@ before we pivoted it wider.</p>
 # Groups:   species_id [18]
    species_id PLOT  MEAN_WT
    &lt;chr&gt;      &lt;chr&gt;   &lt;dbl&gt;
- 1 BA         3         8  
+ 1 BA         3         8
  2 BA         21        6.5
  3 DM         3        41.2
  4 DM         21       41.5
@@ -1994,8 +1994,8 @@ before we pivoted it wider.</p>
 of <code>tidyverse</code> tools, especially <code>ggplot2</code>, like
 data in a longer format, so <code>pivot_longer()</code> is often very
 useful.</p>
-</section><section id="exporting-data"><h2 class="section-heading">Exporting data<a class="anchor" aria-label="anchor" href="#exporting-data"></a>
-</h2>
+</section><section><h2 class="section-heading" id="exporting-data">Exporting data<a class="anchor" aria-label="anchor" href="#exporting-data"></a>
+<a class="anchor" aria-label="anchor" href="#exporting-data"></a></h2>
 <hr class="half-width"><p>Let’s say we want to send the wide version of our
 <code>sb_by_plot</code> data.frame to a colleague who doesn’t use R. In
 this case, we might want to save it as a CSV file.</p>
@@ -2018,24 +2018,24 @@ which will allow us to add “plot_” to the start of each column.</p>
 # Groups:   species_id [18]
    species_id plot_3 plot_21 plot_1 plot_2 plot_4 plot_5 plot_6 plot_7 plot_8
    &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
- 1 BA           8       6.5   NA     NA     NA      NA    NA      NA    NA   
- 2 DM          41.2    41.5   42.7   42.6   41.9    42.6  42.1    43.2  43.4 
- 3 DO          42.7    NA     50.1   50.3   46.8    50.4  49.0    52    49.2 
- 4 DS         128.     NA    129.   125.   118.    111.  114.    126.  128.  
- 5 NL         171.    136.   154.   171.   164.    192.  176.    170.  134.  
- 6 OL          32.1    28.6   35.5   34     33.0    32.6  31.8    NA    30.3 
- 7 OT          24.1    24.1   23.7   24.9   26.5    23.6  23.5    22    24.1 
- 8 OX          22      NA     NA     22     NA      20    NA      NA    NA   
- 9 PE          22.7    19.6   21.6   22.0   NA      21    21.6    22.8  19.4 
+ 1 BA           8       6.5   NA     NA     NA      NA    NA      NA    NA
+ 2 DM          41.2    41.5   42.7   42.6   41.9    42.6  42.1    43.2  43.4
+ 3 DO          42.7    NA     50.1   50.3   46.8    50.4  49.0    52    49.2
+ 4 DS         128.     NA    129.   125.   118.    111.  114.    126.  128.
+ 5 NL         171.    136.   154.   171.   164.    192.  176.    170.  134.
+ 6 OL          32.1    28.6   35.5   34     33.0    32.6  31.8    NA    30.3
+ 7 OT          24.1    24.1   23.7   24.9   26.5    23.6  23.5    22    24.1
+ 8 OX          22      NA     NA     22     NA      20    NA      NA    NA
+ 9 PE          22.7    19.6   21.6   22.0   NA      21    21.6    22.8  19.4
 10 PF           7.12    7.23   6.57   6.89   6.75    7.5   7.54    7     6.78
-11 PH          28      31     NA     NA     NA      29    NA      NA    NA   
-12 PM          20.1    23.6   23.7   23.9   NA      23.7  22.3    23.4  23   
-13 PP          17.1    13.6   14.3   16.4   14.8    19.8  16.8    NA    13.9 
-14 RF          14.8    17     NA     16     NA      14    12.1    13    NA   
-15 RM          10.3     9.89  10.9   10.6   10.4    10.8  10.6    10.7   9   
-16 SF          NA      49     NA     NA     NA      NA    NA      NA    NA   
-17 SH          76.0    79.9   NA     88     NA      82.7  NA      NA    NA   
-18 SS          NA      NA     NA     NA     NA      NA    NA      NA    NA   
+11 PH          28      31     NA     NA     NA      29    NA      NA    NA
+12 PM          20.1    23.6   23.7   23.9   NA      23.7  22.3    23.4  23
+13 PP          17.1    13.6   14.3   16.4   14.8    19.8  16.8    NA    13.9
+14 RF          14.8    17     NA     16     NA      14    12.1    13    NA
+15 RM          10.3     9.89  10.9   10.6   10.4    10.8  10.6    10.7   9
+16 SF          NA      49     NA     NA     NA      NA    NA      NA    NA
+17 SH          76.0    79.9   NA     88     NA      82.7  NA      NA    NA
+18 SS          NA      NA     NA     NA     NA      NA    NA      NA    NA
 # ℹ 15 more variables: plot_9 &lt;dbl&gt;, plot_10 &lt;dbl&gt;, plot_11 &lt;dbl&gt;,
 #   plot_12 &lt;dbl&gt;, plot_13 &lt;dbl&gt;, plot_14 &lt;dbl&gt;, plot_15 &lt;dbl&gt;, plot_16 &lt;dbl&gt;,
 #   plot_17 &lt;dbl&gt;, plot_18 &lt;dbl&gt;, plot_19 &lt;dbl&gt;, plot_20 &lt;dbl&gt;, plot_22 &lt;dbl&gt;,
@@ -2059,24 +2059,24 @@ which will allow us to add “plot_” to the start of each column.</p>
 # Groups:   species_id [18]
    species_id plot_3 plot_21 plot_1 plot_2 plot_4 plot_5 plot_6 plot_7 plot_8
    &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
- 1 BA           8       6.5   NA     NA     NA      NA    NA      NA    NA   
- 2 DM          41.2    41.5   42.7   42.6   41.9    42.6  42.1    43.2  43.4 
- 3 DO          42.7    NA     50.1   50.3   46.8    50.4  49.0    52    49.2 
- 4 DS         128.     NA    129.   125.   118.    111.  114.    126.  128.  
- 5 NL         171.    136.   154.   171.   164.    192.  176.    170.  134.  
- 6 OL          32.1    28.6   35.5   34     33.0    32.6  31.8    NA    30.3 
- 7 OT          24.1    24.1   23.7   24.9   26.5    23.6  23.5    22    24.1 
- 8 OX          22      NA     NA     22     NA      20    NA      NA    NA   
- 9 PE          22.7    19.6   21.6   22.0   NA      21    21.6    22.8  19.4 
+ 1 BA           8       6.5   NA     NA     NA      NA    NA      NA    NA
+ 2 DM          41.2    41.5   42.7   42.6   41.9    42.6  42.1    43.2  43.4
+ 3 DO          42.7    NA     50.1   50.3   46.8    50.4  49.0    52    49.2
+ 4 DS         128.     NA    129.   125.   118.    111.  114.    126.  128.
+ 5 NL         171.    136.   154.   171.   164.    192.  176.    170.  134.
+ 6 OL          32.1    28.6   35.5   34     33.0    32.6  31.8    NA    30.3
+ 7 OT          24.1    24.1   23.7   24.9   26.5    23.6  23.5    22    24.1
+ 8 OX          22      NA     NA     22     NA      20    NA      NA    NA
+ 9 PE          22.7    19.6   21.6   22.0   NA      21    21.6    22.8  19.4
 10 PF           7.12    7.23   6.57   6.89   6.75    7.5   7.54    7     6.78
-11 PH          28      31     NA     NA     NA      29    NA      NA    NA   
-12 PM          20.1    23.6   23.7   23.9   NA      23.7  22.3    23.4  23   
-13 PP          17.1    13.6   14.3   16.4   14.8    19.8  16.8    NA    13.9 
-14 RF          14.8    17     NA     16     NA      14    12.1    13    NA   
-15 RM          10.3     9.89  10.9   10.6   10.4    10.8  10.6    10.7   9   
-16 SF          NA      49     NA     NA     NA      NA    NA      NA    NA   
-17 SH          76.0    79.9   NA     88     NA      82.7  NA      NA    NA   
-18 SS          NA      NA     NA     NA     NA      NA    NA      NA    NA   
+11 PH          28      31     NA     NA     NA      29    NA      NA    NA
+12 PM          20.1    23.6   23.7   23.9   NA      23.7  22.3    23.4  23
+13 PP          17.1    13.6   14.3   16.4   14.8    19.8  16.8    NA    13.9
+14 RF          14.8    17     NA     16     NA      14    12.1    13    NA
+15 RM          10.3     9.89  10.9   10.6   10.4    10.8  10.6    10.7   9
+16 SF          NA      49     NA     NA     NA      NA    NA      NA    NA
+17 SH          76.0    79.9   NA     88     NA      82.7  NA      NA    NA
+18 SS          NA      NA     NA     NA     NA      NA    NA      NA    NA
 # ℹ 15 more variables: plot_9 &lt;dbl&gt;, plot_10 &lt;dbl&gt;, plot_11 &lt;dbl&gt;,
 #   plot_12 &lt;dbl&gt;, plot_13 &lt;dbl&gt;, plot_14 &lt;dbl&gt;, plot_15 &lt;dbl&gt;, plot_16 &lt;dbl&gt;,
 #   plot_17 &lt;dbl&gt;, plot_18 &lt;dbl&gt;, plot_19 &lt;dbl&gt;, plot_20 &lt;dbl&gt;, plot_22 &lt;dbl&gt;,
@@ -2143,18 +2143,18 @@ thoughtfully</li>
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/datacarpentry/R-ecology-lesson-alternative/edit/main/episodes/working-with-data.Rmd" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/datacarpentry/R-ecology-lesson-alternative/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/datacarpentry/R-ecology-lesson-alternative/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/datacarpentry/R-ecology-lesson-alternative/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
 			</div>
@@ -2178,8 +2178,8 @@ thoughtfully</li>
   "url": "https://datacarpentry.github.io/R-ecology-lesson-alternative/working-with-data.html",
   "identifier": "https://datacarpentry.github.io/R-ecology-lesson-alternative/working-with-data.html",
   "dateCreated": "2015-04-02",
-  "dateModified": "2024-07-02",
-  "datePublished": "2024-07-02"
+  "dateModified": "2024-07-08",
+  "datePublished": "2024-07-08"
 }
 
   </script><script>
