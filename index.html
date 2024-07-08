@@ -187,12 +187,19 @@
                   <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Summary and Setup
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#preparations">Preparations</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -284,21 +291,21 @@
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Setup</h1>
       
 
-<div id="this-will-soon-be-the-official-data-carpentry-ecology-r-lesson" class="callout">
+<div id="this-lesson-changed-a-lot-recently" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="this-will-soon-be-the-official-data-carpentry-ecology-r-lesson" class="callout-inner">
-<h3 class="callout-title">This will soon be the official Data Carpentry
-Ecology R lesson!<a class="anchor" aria-label="anchor" href="#this-will-soon-be-the-official-data-carpentry-ecology-r-lesson"></a>
+<div id="this-lesson-changed-a-lot-recently" class="callout-inner">
+<h3 class="callout-title">This lesson changed a lot recently!<a class="anchor" aria-label="anchor" href="#this-lesson-changed-a-lot-recently"></a>
 </h3>
 <div class="callout-content">
+<p>You may notice some big changes in the content of this lesson since
+you last visited.</p>
 <p><a href="https://carpentries.org/blog/2024/03/dc-r-ecology-adoption/" class="external-link">The
 Data Carpentry Ecology Curriculum Advisory Committee recently approved
-this lesson for adoption into the curriculum</a>! It will replace <a href="https://datacarpentry.org/R-ecology-lesson/" class="external-link">the current
-version</a> in the curriculum on 8th July 2024.</p>
-<p>Interested in becoming a Maintainer for this lesson? Please send us a
-message at <a href="mailto:curriculum@carpentries.org">curriculum@carpentries.org</a>.</p>
+this redesigned version of the lesson for adoption into the
+curriculum</a>! It replaced <a href="https://doi.org/10.5281/zenodo.12684301" class="external-link">the previous version</a>
+in the curriculum in July 2024.</p>
 </div>
 </div>
 </div>
@@ -319,7 +326,17 @@ mutate a data frame.</p>
 programming experience.</p>
 
 
-      <section id="setup"><div class="section level3">
+      <section id="setup"><section><h2 class="section-heading" id="preparations">Preparations<a class="anchor" aria-label="anchor" href="#preparations"></a>
+<a class="anchor" aria-label="anchor" href="#preparations"></a></h2>
+<hr class="half-width"><p>Data Carpentry’s teaching is hands-on, and to follow this lesson
+learners must have R and RStudio installed on their computers. They also
+need to be able to install a number of R packages, create directories,
+and download files.</p>
+<p>To avoid troubleshooting during the lesson, learners should follow
+the instructions below to download and install everything beforehand. If
+the computer is managed by their organization’s IT department they might
+need help from an IT administrator.</p>
+<div class="section level3">
 <h3 id="install-r-and-rstudio">Install R and RStudio<a class="anchor" aria-label="anchor" href="#install-r-and-rstudio"></a></h3>
 <p>R and RStudio are two separate pieces of software:</p>
 <ul><li>
@@ -332,13 +349,15 @@ interact with R.</li>
 </ul><p>If you don’t already have R and RStudio installed, follow the
 instructions for your operating system below. You have to install R
 before you install RStudio.</p>
-<p><br></p>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> For Windows </h4>
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  For Windows
+  </h3>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <ul><li>Download R from the <a href="https://cran.r-project.org/bin/windows/base/release.htm" class="external-link">CRAN
 website</a>.</li>
@@ -355,12 +374,15 @@ don’t get any error messages.</li>
 </div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> For MacOS </h4>
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  For MacOS
+  </h3>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <ul><li>Download R from the <a href="https://cran.r-project.org/bin/macosx/" class="external-link">CRAN website</a>.</li>
 <li>Select the <code>.pkg</code> file for the latest R version</li>
@@ -380,12 +402,15 @@ don’t get any error messages.</li>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> For Linux </h4>
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  For Linux
+  </h3>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <ul><li>Download R from the <a href="https://cran.r-project.org/bin/macosx/" class="external-link">CRAN website</a>.</li>
 <li>Select the <code>.pkg</code> file for the latest R version</li>
@@ -515,9 +540,7 @@ and</li>
 <li>
 <a href="data/new_data.zip">zip file of raw data</a>.</li>
 </ul></div>
-
-
-      </section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+</section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="introduction-r-rstudio.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
