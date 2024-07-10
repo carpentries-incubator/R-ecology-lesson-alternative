@@ -1,3 +1,5 @@
+**This version of the lesson was adopted as official curriculum in July 2024. The repository has been archived. Please visit https://github.com/datacarpentry/R-ecology-lesson/ for the source repository of the official lesson.**
+
 ![Build and Deploy Website](https://github.com/datacarpentry/R-ecology-lesson/workflows/Build%20and%20Deploy%20Website/badge.svg)
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://slack-invite.carpentries.org/)
 [![Slack Status](https://img.shields.io/badge/Slack_Channel-DC_Ecology_R-E01563.svg)](https://carpentries.slack.com/messages/C9X9EC405)
